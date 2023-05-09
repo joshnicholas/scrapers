@@ -33,4 +33,3 @@ def get_csv():
     return send_file(csv_path, as_attachment=True, attachment_filename=f'{month}.csv')
 
 
-https://thambili.herokuapp.com/get_data/file=latest_foi
