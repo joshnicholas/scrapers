@@ -31,21 +31,21 @@ def get_csv():
 
     # csv_path = 'static/latest_foi.csv'
 
-    inter = pd.read_csv(csv_path)
+    # inter = pd.read_csv(csv_path)
 
-    jsony = inter.to_json(orient='records')
+    # jsony = inter.to_json(orient='records')
 
-    return jsonify(jsony)
+    # return jsonify(jsony)
 
 
 
     # print(month)
 
-    # # Also make sure the requested csv file does exist
-    # if not os.path.isfile(csv_path):
-    #     return f"ERROR: file {month} was not found on the server"
-    # # Send the file back to the client
-    # return send_file(csv_path, as_attachment=True)
+    # Also make sure the requested csv file does exist
+    if not os.path.isfile(csv_path):
+        return f"ERROR: file {month} was not found on the server"
+    # Send the file back to the client
+    return send_file(csv_path, as_attachment=True)
 
 
 # https://thambili.herokuapp.com/get_data?file=latest_foi
