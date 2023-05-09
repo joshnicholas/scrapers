@@ -96,6 +96,9 @@ with open(f'../archive/latest.csv', 'w') as f:
 with open(f'../static/latest_foi.csv', 'w') as f:
     cat.to_csv(f, index=False, header=True)
 
+with open(f'../static/latest_foi.json', 'w') as f:
+    cat.to_json(f, orient='records')
+
 # json_feed_dumper('feeds', 'feed', cat)
 
 

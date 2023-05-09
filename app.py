@@ -1,6 +1,7 @@
 from flask import Flask, request, send_file, redirect, Response, jsonify
 from flask_cors import CORS
 
+import json 
 import os 
 import io
 import csv
@@ -25,27 +26,22 @@ def get_csv():
 
     month = request.args["file"]
 
-    stem = month.split(".")[-0]
-    
-    csv_path = f"./static/{month}.csv"   
+    json_path = f"./static/{month}.json"   
 
-    # csv_path = 'static/latest_foi.csv'
+    r = open(json_path)
+    jsony = json.load(r)
 
-    # inter = pd.read_csv(csv_path)
-
-    # jsony = inter.to_json(orient='records')
-
-    # return jsonify(jsony)
+    return jsony
 
 
 
     # print(month)
 
-    # Also make sure the requested csv file does exist
-    if not os.path.isfile(csv_path):
-        return f"ERROR: file {month} was not found on the server"
-    # Send the file back to the client
-    return send_file(csv_path, as_attachment=True)
+    # # Also make sure the requested csv file does exist
+    # if not os.path.isfile(csv_path):
+    #     return f"ERROR: file {month} was not found on the server"
+    # # Send the file back to the client
+    # return send_file(csv_path, as_attachment=True)
 
 
 # https://thambili.herokuapp.com/get_data?file=latest_foi
