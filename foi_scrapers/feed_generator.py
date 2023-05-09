@@ -13,7 +13,7 @@ from jsonfeedvalidator import validate_feed, format_errors, ErrorTree
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
-print("cwd: ", os.getcwd())
+# print("cwd: ", os.getcwd())
 
 def json_feed_dumper(out_path, file_name, frame):
 
@@ -97,7 +97,6 @@ with open(f'../static/latest_foi.csv', 'w') as f:
     cat.to_csv(f, index=False, header=True)
 
 # json_feed_dumper('feeds', 'feed', cat)
-
 
 
 

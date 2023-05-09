@@ -144,7 +144,7 @@ for card in cards:
                 "Home_url": home,
                   "File": file}
         
-        create_raw_append_csv('../data', 'home_affairs', record, "Id", 'Date')
+        create_raw_append_csv('../data/foi', 'home_affairs', record, "Id", 'Date')
 
     except Exception as e:
         print(f"Exception is {e}")

@@ -836,3 +836,21 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 [ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
 DevTools listening on ws://127.0.0.1:49947/devtools/browser/77f62b25-9c73-474c-9f38-586f0ba21e1a
 JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683669165626	geckodriver	INFO	Listening on 127.0.0.1:50667
+1683669166111	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileiSmEj6"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683669166496	Marionette	INFO	Marionette enabled
+1683669166722	Marionette	INFO	Listening on port 50676
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 50676
+WebDriver BiDi listening on ws://127.0.0.1:50668
+1683669167157	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileiSmEj6/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:50668/devtools/browser/992ead76-b09b-4209-b21a-26ff43215c01
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement

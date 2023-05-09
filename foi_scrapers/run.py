@@ -1,23 +1,23 @@
 import time
 
 print("home affairs")
-import scrapers.home_affairs
+import home_affairs
 
 time.sleep(2)
 
 print("treasury")
-import scrapers.treasury
+import treasury
 
 time.sleep(2)
 
 print("finance")
-import scrapers.finance
+import finance
 
 time.sleep(2)
 
 print("environment")
-import scrapers.environment
+import environment
 
 time.sleep(2)
 
-import feed_generator
+import feed_generator as feed_generator

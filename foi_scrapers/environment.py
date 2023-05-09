@@ -87,7 +87,7 @@ soup = bs(r.text, 'html.parser')
 
 rows = soup.find_all('tr')
 
-donners = already_done('../data', 'treasury')
+donners = already_done('../data/foi', 'treasury')
 # print("donners: ", donners)
 
 for row in rows[1:]:
@@ -125,7 +125,7 @@ for row in rows[1:]:
                     "File": file}
             
             # print(record)
-            create_raw_append_csv('../data', 'environment', record, "Id", 'Date')
+            create_raw_append_csv('../data/foi', 'environment', record, "Id", 'Date')
 
     except AttributeError as e:
 

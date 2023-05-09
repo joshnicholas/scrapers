@@ -103,7 +103,7 @@ box = soup.find(class_='view-content')
 
 rows = soup.find_all('tr')
 
-donners = already_done('../data', 'treasury')
+donners = already_done('../data/foi', 'treasury')
 # print("donners: ", donners)
 
 for row in rows[1:]:
@@ -135,7 +135,7 @@ for row in rows[1:]:
                 "Home_url": home,
                 "File": file}
 
-        create_raw_append_csv('../data', 'treasury', record, "Id", 'Date')
+        create_raw_append_csv('../data/foi', 'treasury', record, "Id", 'Date')
 
 # print(rows[1])
 # %%
