@@ -12,7 +12,9 @@ DateTime==5.0
 distlib==0.3.6
 filelock==3.8.0
 Flask==2.3.2
+Flask-Cors==3.0.10
 fuzzywuzzy==0.18.0
+gdnDocSync @ file:///Users/josh_nicholas/Downloads/aus-docs-cmd-sync-main
 gunicorn==20.1.0
 h11==0.14.0
 idna==3.4
