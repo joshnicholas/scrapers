@@ -12,11 +12,13 @@ CORS(app)
 
 @app.route("/")
 def index():
+
     return "Hello, cross-origin-world!"
 
 
 @app.route('/get_data', methods=["GET"])
 def get_csv():
+
     """ 
     Returns the csv file requested.
     """
@@ -30,6 +32,9 @@ def get_csv():
 
     r = open(json_path)
     jsony = json.load(r)
+
+    response = jsonify(jsony)
+    response.headers.add('Access-Control-Allow-Origin', '*')
 
     return jsony
 
