@@ -10,7 +10,7 @@ def index():
     return "Hello World!"
 
 
-@app.route('/get_data')
+@app.route('/get_data', methods=["GET"])
 def get_csv():
     """ 
     Returns the csv file requested.
@@ -18,18 +18,25 @@ def get_csv():
     # Checking that the month parameter has been supplied
     if not "file" in request.args:
         return "You haven't specificed a file"
-    # Also make sure that the value provided is numeric
-    try:
-        month = int(request.args["file"])
-    except:
-        return "You haven't specificed a file that exists"
+
+    month = request.args["file"]
+
+    stem = month.split(".")[-0]
     
-    csv_path = f"static/{month}.csv"   
+    csv_path = f"./static/{month}"   
+
+    # csv_path = 'static/latest_foi.csv'
+
+    print(month)
 
     # Also make sure the requested csv file does exist
     if not os.path.isfile(csv_path):
         return f"ERROR: file {month} was not found on the server"
     # Send the file back to the client
-    return send_file(csv_path, as_attachment=True, attachment_filename=f'{month}.csv')
+    return send_file(csv_path, as_attachment=True)
 
+
+# https://thambili.herokuapp.com/get_data?file=latest_foi
+
+# http://127.0.0.1:5000/get_data?file=latest_foi
 
