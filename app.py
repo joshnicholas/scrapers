@@ -36,7 +36,7 @@ def get_csv():
     response = jsonify(jsony)
     response.headers.add('Access-Control-Allow-Origin', '*')
 
-    return jsony
+    return response
 
 
 
