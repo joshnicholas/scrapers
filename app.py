@@ -1,14 +1,17 @@
 from flask import Flask, request, send_file, redirect, Response, jsonify
+from flask_cors import CORS
+
 import os 
 import io
 import csv
 import pandas as pd 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def index():
-    return "Hello World!"
+    return "Hello, cross-origin-world!"
 
 
 @app.route('/get_data', methods=["GET"])
