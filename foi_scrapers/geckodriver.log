@@ -1,0 +1,838 @@
+1681848205674	geckodriver	INFO	Listening on 127.0.0.1:55098
+1681848206194	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileHaX100"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681848206559	Marionette	INFO	Marionette enabled
+1681848206619	Marionette	INFO	Listening on port 55111
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 55111
+WebDriver BiDi listening on ws://127.0.0.1:55099
+1681848207165	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileHaX100/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55099/devtools/browser/f23dea63-f83e-4313-a72f-1690e83cd987
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1681848263956	geckodriver	INFO	Listening on 127.0.0.1:55413
+1681848263977	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilepJQq2I"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681848264358	Marionette	INFO	Marionette enabled
+1681848264407	Marionette	INFO	Listening on port 55419
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 55419
+WebDriver BiDi listening on ws://127.0.0.1:55414
+1681848264947	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilepJQq2I/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55414/devtools/browser/64b9da35-31db-43c3-a54f-b0e0dcd789c3
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1681848443880	geckodriver	INFO	Listening on 127.0.0.1:56295
+1681848444410	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileYaETg6"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681848444847	Marionette	INFO	Marionette enabled
+1681848444912	Marionette	INFO	Listening on port 56308
+Read port: 56308
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:56296
+1681848445502	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileYaETg6/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56296/devtools/browser/bf26ec2f-e7c1-44c5-9c4b-ec5489b6b971
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1681848495724	geckodriver	INFO	Listening on 127.0.0.1:56578
+1681848496245	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileOYC7hF"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681848496637	Marionette	INFO	Marionette enabled
+1681848496688	Marionette	INFO	Listening on port 56594
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 56594
+WebDriver BiDi listening on ws://127.0.0.1:56579
+1681848497199	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileOYC7hF/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56579/devtools/browser/0349856e-1855-4eb0-9d83-b9a922cdf3b8
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1681848521946	geckodriver	INFO	Listening on 127.0.0.1:56763
+1681848521968	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile1ZR0wc"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681848522376	Marionette	INFO	Marionette enabled
+1681848522441	Marionette	INFO	Listening on port 56769
+Read port: 56769
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:56764
+1681848523069	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile1ZR0wc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56764/devtools/browser/13642563-cee7-416d-aca6-b8aa9df26dfd
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1681848533652	geckodriver	INFO	Listening on 127.0.0.1:56874
+1681848534174	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilefBZx5Z"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681848534590	Marionette	INFO	Marionette enabled
+1681848534724	Marionette	INFO	Listening on port 56891
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 56891
+WebDriver BiDi listening on ws://127.0.0.1:56875
+1681848535021	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilefBZx5Z/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56875/devtools/browser/26f7bbde-ee20-43b8-acd9-cc3f09eea604
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1681848747718	geckodriver	INFO	Listening on 127.0.0.1:57873
+1681848747738	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilekPIUwl"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681848748120	Marionette	INFO	Marionette enabled
+1681848748174	Marionette	INFO	Listening on port 57883
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 57883
+WebDriver BiDi listening on ws://127.0.0.1:57874
+1681848748701	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilekPIUwl/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57874/devtools/browser/c124eb10-225a-4807-b2ab-cadd7f9644fa
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+<<<<<<< Updated upstream
+1681849939645	geckodriver	INFO	Listening on 127.0.0.1:45377
+1681849940037	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "35815" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilevOOP71"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1681849945160	Marionette	INFO	Marionette enabled
+1681849945191	Marionette	INFO	Listening on port 44163
+Read port: 44163
+WebDriver BiDi listening on ws://127.0.0.1:35815
+1681849946126	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilevOOP71/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:35815/devtools/browser/e804bc13-43e3-4faa-9dc0-43e66ca5d117
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+=======
+1681859816329	geckodriver	INFO	Listening on 127.0.0.1:53313
+1681859816799	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileml0skT"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681859817255	Marionette	INFO	Marionette enabled
+1681859817319	Marionette	INFO	Listening on port 53325
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 53325
+WebDriver BiDi listening on ws://127.0.0.1:53314
+1681859817993	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileml0skT/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53314/devtools/browser/d986fe6c-02de-4163-91bb-f03fe4cecd4e
+>>>>>>> Stashed changes
+1681973194618	geckodriver	INFO	Listening on 127.0.0.1:53916
+1681973195088	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile1OlH9M"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681973195534	Marionette	INFO	Marionette enabled
+1681973195587	Marionette	INFO	Listening on port 53927
+Read port: 53927
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:53917
+1681973196068	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile1OlH9M/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53917/devtools/browser/ea06db99-b545-4531-936a-2aeb997c0833
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1681973286751	geckodriver	INFO	Listening on 127.0.0.1:54010
+1681973286767	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile0tqHnU"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1681973287155	Marionette	INFO	Marionette enabled
+1681973287288	Marionette	INFO	Listening on port 54017
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 54017
+WebDriver BiDi listening on ws://127.0.0.1:54011
+1681973287552	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile0tqHnU/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54011/devtools/browser/4db1a1ce-aa11-4898-9424-670cf7eb5457
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1681973408965	geckodriver	INFO	Listening on 127.0.0.1:40593
+1681973409464	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "49761" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileAA8wbK"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1681973413050	Marionette	INFO	Marionette enabled
+1681973413062	Marionette	INFO	Listening on port 43381
+Read port: 43381
+WebDriver BiDi listening on ws://127.0.0.1:49761
+1681973413816	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileAA8wbK/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49761/devtools/browser/d2380265-e7e8-4fba-8ad0-2e57e7f80fae
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1681975392541	geckodriver	INFO	Listening on 127.0.0.1:53467
+1681975392923	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "55567" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiletlMQ7Z"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1681975398606	Marionette	INFO	Marionette enabled
+1681975398620	Marionette	INFO	Listening on port 46153
+Read port: 46153
+WebDriver BiDi listening on ws://127.0.0.1:55567
+1681975399795	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiletlMQ7Z/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:55567/devtools/browser/f791ba41-3970-44f5-a281-f01fd7ab6b94
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1681997527126	geckodriver	INFO	Listening on 127.0.0.1:59309
+1681997527521	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "40569" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileEKTVeU"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1681997538043	Marionette	INFO	Marionette enabled
+1681997538059	Marionette	INFO	Listening on port 32821
+Read port: 32821
+Read port: 32821
+WebDriver BiDi listening on ws://127.0.0.1:40569
+1681997540421	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileEKTVeU/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:40569/devtools/browser/7390432a-d375-4c1d-8421-8e00b0efe2fe
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682031891289	geckodriver	INFO	Listening on 127.0.0.1:50077
+1682031891788	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilecXDo7W"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1682031892234	Marionette	INFO	Marionette enabled
+1682031892293	Marionette	INFO	Listening on port 50086
+Read port: 50086
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:50078
+1682031892835	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilecXDo7W/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50078/devtools/browser/4107be02-21d4-4c4f-be82-881be84a66d5
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1682061805481	geckodriver	INFO	Listening on 127.0.0.1:56199
+1682061805840	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "35929" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileFVgcWT"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682061806964	Marionette	INFO	Marionette enabled
+1682061806980	Marionette	INFO	Listening on port 42847
+Read port: 42847
+WebDriver BiDi listening on ws://127.0.0.1:35929
+1682061807291	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileFVgcWT/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:35929/devtools/browser/3ad6ba46-965b-405f-8ca3-b2d22c9e424c
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682083624101	geckodriver	INFO	Listening on 127.0.0.1:57667
+1682083624451	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "60619" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileNT2QvG"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682083632001	Marionette	INFO	Marionette enabled
+1682083632026	Marionette	INFO	Listening on port 46781
+Read port: 46781
+Read port: 46781
+WebDriver BiDi listening on ws://127.0.0.1:60619
+1682083633344	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileNT2QvG/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:60619/devtools/browser/aa1d79c3-b78d-403b-8f44-fa871dc2de69
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682321031562	geckodriver	INFO	Listening on 127.0.0.1:33813
+1682321031787	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "35803" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileb9fp5r"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682321039032	Marionette	INFO	Marionette enabled
+1682321039049	Marionette	INFO	Listening on port 34247
+Read port: 34247
+WebDriver BiDi listening on ws://127.0.0.1:35803
+Read port: 34247
+1682321040367	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileb9fp5r/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:35803/devtools/browser/a79dee2c-c8fd-4e8d-8b2b-957c0bd46778
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682342878119	geckodriver	INFO	Listening on 127.0.0.1:57009
+1682342878565	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "46687" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileU264eF"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682342888349	Marionette	INFO	Marionette enabled
+1682342888370	Marionette	INFO	Listening on port 38303
+Read port: 38303
+Read port: 38303
+Read port: 38303
+WebDriver BiDi listening on ws://127.0.0.1:46687
+1682342890993	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileU264eF/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:46687/devtools/browser/7a009fe9-919d-499b-8f18-2b8040db1dac
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682407400563	geckodriver	INFO	Listening on 127.0.0.1:44313
+1682407400816	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "41529" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilekNo1yF"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682407409520	Marionette	INFO	Marionette enabled
+1682407409534	Marionette	INFO	Listening on port 40819
+Read port: 40819
+Read port: 40819
+WebDriver BiDi listening on ws://127.0.0.1:41529
+1682407411347	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilekNo1yF/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:41529/devtools/browser/3e75994f-be45-450f-b087-996f3c2a3082
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682429291220	geckodriver	INFO	Listening on 127.0.0.1:39989
+1682429291444	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "36053" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilez5SipV"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682429300026	Marionette	INFO	Marionette enabled
+1682429300042	Marionette	INFO	Listening on port 43931
+Read port: 43931
+Read port: 43931
+WebDriver BiDi listening on ws://127.0.0.1:36053
+1682429301358	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilez5SipV/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:36053/devtools/browser/0c160a69-78b3-45f9-89b7-4b95d34a43bb
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682493821296	geckodriver	INFO	Listening on 127.0.0.1:58499
+1682493821590	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "52663" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileJwfJw1"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682493829392	Marionette	INFO	Marionette enabled
+1682493829440	Marionette	INFO	Listening on port 39005
+Read port: 39005
+Read port: 39005
+WebDriver BiDi listening on ws://127.0.0.1:52663
+1682493830896	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileJwfJw1/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:52663/devtools/browser/40994c5d-b1ac-4a08-93c0-eb559228e258
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682515692417	geckodriver	INFO	Listening on 127.0.0.1:37885
+1682515692668	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "49033" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilebKFTji"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682515699073	Marionette	INFO	Marionette enabled
+1682515699084	Marionette	INFO	Listening on port 36603
+Read port: 36603
+WebDriver BiDi listening on ws://127.0.0.1:49033
+1682515700004	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilebKFTji/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49033/devtools/browser/3de3ca9f-0da4-4c3d-bca5-4aefcca7ba39
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682550505615	geckodriver	INFO	Listening on 127.0.0.1:65287
+1682550506099	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile9aF0Nz"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1682550506537	Marionette	INFO	Marionette enabled
+1682550506775	Marionette	INFO	Listening on port 65297
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 65297
+WebDriver BiDi listening on ws://127.0.0.1:65288
+1682550507168	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile9aF0Nz/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:65288/devtools/browser/cd840612-56ee-4ae5-8e79-2ae49afe955d
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1682580210521	geckodriver	INFO	Listening on 127.0.0.1:39183
+1682580211050	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "35945" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile84mHlM"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682580218809	Marionette	INFO	Marionette enabled
+1682580218825	Marionette	INFO	Listening on port 44331
+Read port: 44331
+Read port: 44331
+WebDriver BiDi listening on ws://127.0.0.1:35945
+1682580220286	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile84mHlM/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:35945/devtools/browser/7357e8e0-5d85-43f1-bea9-3e8b2624eafe
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682602301978	geckodriver	INFO	Listening on 127.0.0.1:39385
+1682602302331	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "48773" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilejK8ixj"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682602309406	Marionette	INFO	Marionette enabled
+1682602309421	Marionette	INFO	Listening on port 44975
+Read port: 44975
+Read port: 44975
+WebDriver BiDi listening on ws://127.0.0.1:48773
+1682602310786	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilejK8ixj/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:48773/devtools/browser/14fc4601-7b05-4387-a9c6-83e1ada5f0ec
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682666609885	geckodriver	INFO	Listening on 127.0.0.1:53147
+1682666610273	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "35779" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileybzU9c"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682666616628	Marionette	INFO	Marionette enabled
+1682666616643	Marionette	INFO	Listening on port 34583
+Read port: 34583
+WebDriver BiDi listening on ws://127.0.0.1:35779
+Read port: 34583
+1682666617968	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileybzU9c/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:35779/devtools/browser/b0eaa681-cd3e-4fe6-95fd-c67e7532c722
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682688399835	geckodriver	INFO	Listening on 127.0.0.1:36365
+1682688400142	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "39729" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileQULyYh"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682688410600	Marionette	INFO	Marionette enabled
+1682688410616	Marionette	INFO	Listening on port 37527
+Read port: 37527
+Read port: 37527
+WebDriver BiDi listening on ws://127.0.0.1:39729
+1682688412763	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileQULyYh/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:39729/devtools/browser/3803a40b-bf92-48e6-ab31-87c36df3a265
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1682925823883	geckodriver	INFO	Listening on 127.0.0.1:35231
+1682925824288	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "48097" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0qBvPb"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682925829817	Marionette	INFO	Marionette enabled
+1682925829836	Marionette	INFO	Listening on port 42909
+Read port: 42909
+WebDriver BiDi listening on ws://127.0.0.1:48097
+Read port: 42909
+1682925831885	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0qBvPb/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:48097/devtools/browser/e75682aa-c00b-4060-afa8-0f4b5a353e28
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1682947603743	geckodriver	INFO	Listening on 127.0.0.1:41919
+1682947604240	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "49853" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilecxhOdi"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1682947614160	Marionette	INFO	Marionette enabled
+1682947614173	Marionette	INFO	Listening on port 42915
+Read port: 42915
+Read port: 42915
+WebDriver BiDi listening on ws://127.0.0.1:49853
+1682947615854	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilecxhOdi/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49853/devtools/browser/8ae09048-2a14-47dc-b80c-867a79dcde79
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1683012211276	geckodriver	INFO	Listening on 127.0.0.1:41779
+1683012211552	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "35623" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileOrw8dv"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1683012222064	Marionette	INFO	Marionette enabled
+1683012222091	Marionette	INFO	Listening on port 38977
+Read port: 38977
+Read port: 38977
+WebDriver BiDi listening on ws://127.0.0.1:35623
+1683012223628	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileOrw8dv/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:35623/devtools/browser/8def4003-88ef-4699-87c6-f2abd55f792b
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1683034089660	geckodriver	INFO	Listening on 127.0.0.1:33457
+1683034089944	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "52795" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile372nVG"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1683034096862	Marionette	INFO	Marionette enabled
+1683034096888	Marionette	INFO	Listening on port 33433
+Read port: 33433
+Read port: 33433
+WebDriver BiDi listening on ws://127.0.0.1:52795
+1683034098274	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile372nVG/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:52795/devtools/browser/91ccdd2b-02eb-4317-8490-ebe4c2f7e48b
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1683098651957	geckodriver	INFO	Listening on 127.0.0.1:39255
+1683098652352	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "37783" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWJk0ln"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1683098653171	Marionette	INFO	Marionette enabled
+1683098653176	Marionette	INFO	Listening on port 39047
+Read port: 39047
+WebDriver BiDi listening on ws://127.0.0.1:37783
+1683098653389	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileWJk0ln/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:37783/devtools/browser/45803eb1-ef1d-4ae0-b8a3-15eb1f254fd5
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1683120402984	geckodriver	INFO	Listening on 127.0.0.1:47009
+1683120403584	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "60379" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexkKtPz"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1683120414958	Marionette	INFO	Marionette enabled
+1683120414993	Marionette	INFO	Listening on port 46125
+Read port: 46125
+Read port: 46125
+WebDriver BiDi listening on ws://127.0.0.1:60379
+1683120417004	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexkKtPz/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:60379/devtools/browser/0c22073d-9670-4c74-85d6-8b7004916908
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+ALSA lib seq_hw.c:466:(snd_seq_hw_open) open /dev/snd/seq failed: Permission denied
+1683591600875	geckodriver	INFO	Listening on 127.0.0.1:59499
+1683591601353	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileDlI49T"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683591601812	Marionette	INFO	Marionette enabled
+1683591602063	Marionette	INFO	Listening on port 59510
+Read port: 59510
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:59500
+1683591602528	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileDlI49T/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:59500/devtools/browser/9e12ac96-5118-4192-b176-a0e59672831d
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683591643102	geckodriver	INFO	Listening on 127.0.0.1:59575
+1683591643626	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilejI2WqE"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683591644049	Marionette	INFO	Marionette enabled
+1683591644369	Marionette	INFO	Listening on port 59585
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 59585
+WebDriver BiDi listening on ws://127.0.0.1:59576
+1683591644762	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilejI2WqE/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:59576/devtools/browser/b0eb3fd5-5e9a-4fc6-a94b-434f3f8c5dee
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683591728736	geckodriver	INFO	Listening on 127.0.0.1:59738
+1683591729258	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileHkaJXQ"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683591729692	Marionette	INFO	Marionette enabled
+1683591729930	Marionette	INFO	Listening on port 59748
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 59748
+WebDriver BiDi listening on ws://127.0.0.1:59739
+1683591730353	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileHkaJXQ/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:59739/devtools/browser/08adfe97-385c-4aa3-a7bc-25e3b7347d27
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683591758069	geckodriver	INFO	Listening on 127.0.0.1:59802
+1683591758607	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilexv6R0L"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683591758994	Marionette	INFO	Marionette enabled
+1683591759224	Marionette	INFO	Listening on port 59810
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 59810
+WebDriver BiDi listening on ws://127.0.0.1:59803
+1683591759582	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilexv6R0L/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:59803/devtools/browser/9ad44ab0-c7a3-4ff0-b48b-98ed9660daff
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683591769953	geckodriver	INFO	Listening on 127.0.0.1:59858
+1683591770481	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofiletdQdHJ"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683591770861	Marionette	INFO	Marionette enabled
+1683591771148	Marionette	INFO	Listening on port 59868
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 59868
+WebDriver BiDi listening on ws://127.0.0.1:59859
+1683591771527	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofiletdQdHJ/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:59859/devtools/browser/393b576b-ddce-4f6b-a287-e9391d4bc255
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683591912453	geckodriver	INFO	Listening on 127.0.0.1:49331
+1683591912916	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile5lGWqA"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683591913390	Marionette	INFO	Marionette enabled
+1683591913618	Marionette	INFO	Listening on port 49349
+Read port: 49349
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:49332
+1683591914048	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile5lGWqA/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49332/devtools/browser/445314f6-c1ed-45d8-96b0-57c8a527bbba
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683592309602	geckodriver	INFO	Listening on 127.0.0.1:49622
+1683592309615	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile8HAw1S"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683592310015	Marionette	INFO	Marionette enabled
+1683592310230	Marionette	INFO	Listening on port 49630
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 49630
+WebDriver BiDi listening on ws://127.0.0.1:49623
+1683592310631	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofile8HAw1S/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49623/devtools/browser/eaee2c3f-2078-4f03-8be1-da2491383872
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683592355866	geckodriver	INFO	Listening on 127.0.0.1:49699
+1683592356390	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilevqwqim"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683592356751	Marionette	INFO	Marionette enabled
+1683592356955	Marionette	INFO	Listening on port 49705
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 49705
+WebDriver BiDi listening on ws://127.0.0.1:49700
+1683592357276	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilevqwqim/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49700/devtools/browser/732074cf-d76d-49cc-afdf-0907e0d50992
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683592362960	geckodriver	INFO	Listening on 127.0.0.1:49759
+1683592363482	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileqHY4ED"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683592363845	Marionette	INFO	Marionette enabled
+1683592364025	Marionette	INFO	Listening on port 49765
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 49765
+WebDriver BiDi listening on ws://127.0.0.1:49760
+1683592364379	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileqHY4ED/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49760/devtools/browser/a8e0005d-c7e7-410f-9ddd-e31abdd9d373
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683592378065	geckodriver	INFO	Listening on 127.0.0.1:49817
+1683592378584	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilev1MLio"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683592378957	Marionette	INFO	Marionette enabled
+1683592379158	Marionette	INFO	Listening on port 49824
+Read port: 49824
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:49818
+1683592379525	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilev1MLio/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49818/devtools/browser/609d8912-ef9d-456d-addb-12df1941ad4c
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683592504326	geckodriver	INFO	Listening on 127.0.0.1:49946
+1683592504850	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilehJpaXU"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683592505219	Marionette	INFO	Marionette enabled
+1683592505392	Marionette	INFO	Listening on port 49952
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+Read port: 49952
+WebDriver BiDi listening on ws://127.0.0.1:49947
+1683592505768	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofilehJpaXU/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:49947/devtools/browser/77f62b25-9c73-474c-9f38-586f0ba21e1a
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
