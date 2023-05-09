@@ -1,7 +1,8 @@
-from flask import Flask, request, send_file, redirect
+from flask import Flask, request, send_file, redirect, Response, jsonify
 import os 
 import io
 import csv
+import pandas as pd 
 
 app = Flask(__name__)
 
@@ -23,17 +24,25 @@ def get_csv():
 
     stem = month.split(".")[-0]
     
-    csv_path = f"./static/{month}"   
+    csv_path = f"./static/{month}.csv"   
 
     # csv_path = 'static/latest_foi.csv'
 
-    print(month)
+    inter = pd.read_csv(csv_path)
 
-    # Also make sure the requested csv file does exist
-    if not os.path.isfile(csv_path):
-        return f"ERROR: file {month} was not found on the server"
-    # Send the file back to the client
-    return send_file(csv_path, as_attachment=True)
+    jsony = inter.to_json(orient='records')
+
+    return jsonify(jsony)
+
+
+
+    # print(month)
+
+    # # Also make sure the requested csv file does exist
+    # if not os.path.isfile(csv_path):
+    #     return f"ERROR: file {month} was not found on the server"
+    # # Send the file back to the client
+    # return send_file(csv_path, as_attachment=True)
 
 
 # https://thambili.herokuapp.com/get_data?file=latest_foi
