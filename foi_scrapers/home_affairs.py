@@ -81,7 +81,7 @@ scrape_hour = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%H
 
 #%%
 
-print('this_year: ', this_year)
+# print('this_year: ', this_year)
 
 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
 'Accept-Language': "en-GB,en-US;q=0.9,en;q=0.8",
@@ -103,7 +103,7 @@ box = soup.find(class_="content")
 # %%
 
 cards = box.find_all("tr", attrs={"tabindex": -1})
-print("lenno: ", len(cards))
+# print("lenno: ", len(cards))
 
 for card in cards:
     try:
@@ -129,7 +129,7 @@ for card in cards:
         title = pees[0].text
         # print(title)
 
-        print(pees)
+        # print(pees)
         urlo = pees[1].a['href']
         # print(urlo)
 

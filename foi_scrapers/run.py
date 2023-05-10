@@ -20,4 +20,4 @@ import environment
 
 time.sleep(2)
 
-import feed_generator as feed_generator
+import feed_generator

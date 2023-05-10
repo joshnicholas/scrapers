@@ -854,3 +854,39 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 [ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
 DevTools listening on ws://127.0.0.1:50668/devtools/browser/992ead76-b09b-4209-b21a-26ff43215c01
 JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683747379306	geckodriver	INFO	Listening on 127.0.0.1:53887
+1683747379851	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileQOl2yf"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683747380323	Marionette	INFO	Marionette enabled
+1683747380661	Marionette	INFO	Listening on port 53903
+Read port: 53903
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:53888
+1683747381245	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileQOl2yf/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:53888/devtools/browser/a64e7e95-3e44-4339-970f-1cb494409a9e
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement
+1683747483304	geckodriver	INFO	Listening on 127.0.0.1:54377
+1683747483832	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileLIfHMt"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: Policies.jsm: 
+  Unable to find certificate - gnm_root_ca.cer
+1683747484278	Marionette	INFO	Marionette enabled
+1683747484526	Marionette	INFO	Listening on port 54394
+Read port: 54394
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+WebDriver BiDi listening on ws://127.0.0.1:54378
+1683747484937	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/1h/4w391kn52y51w5mmd37_xfn80000gq/T/rust_mozprofileLIfHMt/search.json.mozlz4", (void 0)))
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:54378/devtools/browser/ba159ab2-7deb-46d0-a370-5d1e31bcb124
+JavaScript warning: https://www.homeaffairs.gov.au/AssetLibrary/dist/lib/translation/translation.js, line 305: unreachable code after return statement

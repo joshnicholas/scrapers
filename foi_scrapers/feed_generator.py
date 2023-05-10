@@ -38,7 +38,7 @@ cat.fillna('', inplace=True)
 # print(cat)
 # print(cat.columns.tolist())
 
-with open(f'../archive/foi/archive/foi/daily_dumps/{scrape_date_stemmo}.csv', 'w') as f:
+with open(f'../archive/foi/daily_dumps/{scrape_date_stemmo}.csv', 'w') as f:
     cat.to_csv(f, index=False, header=True)
 
 with open(f'../archive/foi/latest_foi.csv', 'w') as f:
