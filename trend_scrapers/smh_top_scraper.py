@@ -65,11 +65,12 @@ soup = bs(driver.page_source.encode("utf-8"), 'html.parser')
 
 container = soup.find("section", {"data-an-name": "Most Popular"})
 
-# print(container)
-items = container.find_all("h3")
-# print(items)
-
 try:
+
+    # print(container)
+    items = container.find_all("h3")
+    # print(items)
+
 
     items = [{"Headline":f"{x.text.strip()}", "Url": f"{'https://www.smh.com.au' + x.a['href']}"} for x in items]
 
@@ -98,4 +99,5 @@ try:
 
 except:
     print("Error with SMH!")
+    print(driver.page_source)
     pass
