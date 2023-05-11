@@ -112,7 +112,7 @@ for month in [this_month, next_month]:
         rows = box.find_all(class_='views-row')
 
         for row in rows:
-            print(row)
+            # print(row)
 
             init_date = row.find(class_='datetime').text.strip()
 

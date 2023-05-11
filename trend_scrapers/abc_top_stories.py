@@ -47,7 +47,7 @@ div = soup.find("div", {"data-uri":"recommendation://collection/abc-news-homepag
 # recommendation://collection/abc-news-homepage-sidebar
 items = div.find_all("a", {"data-component":"Link"})
 
-print(items)
+# print(items)
 
 # %%
 
@@ -68,9 +68,9 @@ for thing in items:
     dicto = {"publication": "ABC",
 
     'scraped_datetime': scrape_time,
-    'headline': heado.replace("analysis:", '').strip(),
-    'url': urlo.strip(),
-    'page_rank': counter
+    'Headline': heado.replace("analysis:", '').strip(),
+    'Url': urlo.strip(),
+    'Rank': counter
     }
 
     counter += 1

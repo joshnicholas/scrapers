@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup as bs
 import pytz
 import datetime
 import json
+import requests
 
 import pathlib
 import os 
@@ -12,13 +13,6 @@ pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
 # %%
-
-from selenium import webdriver 
-from selenium.webdriver.chrome.options import Options
-
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(options=chrome_options)
 
 # %%
 
@@ -44,53 +38,30 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 
 # %%
 
+r = requests.get("https://www.theguardian.com/au")
+soup = bs(r.text, 'html.parser')
+items = soup.find_all("li", class_="most-popular__item")
 
 
-start_url = "https://smh.com.au"
-driver.get(start_url)
+items = [{"Headline":f"{x.h3.text.strip()}", "Url": f"{x.a['href']}"} for x in items]
 
-# import requests
 
-# r = requests.get('https://www.smh.com.au/national', headers=headers)
-
-# %%
-
-soup = bs(driver.page_source.encode("utf-8"), 'html.parser')
-
-# print(r.text)
-
-# print(soup)
-
-# %%
-
-container = soup.find("section", {"data-an-name": "Most Popular"})
-
-# print(container)
-items = container.find_all("h3")
 # print(items)
-
-
-items = [{"Headline":f"{x.text.strip()}", "Url": f"{'https://www.smh.com.au' + x.a['href']}"} for x in items]
 
 df = pd.DataFrame(items)
 
 df['scraped_datetime']= scrape_time
-
-# print(df)
 
 # %%
 
 zdf = df.copy()
 zdf['Rank'] = zdf.index + 1
 
-# print(zdf)
-# %%
 
-dumper('../archive/smh_top', 'latest', zdf)
+dumper('../archive/graun_top', 'latest', zdf)
 
-dumper('../archive/smh_top/daily_dumps', format_scrape_time, zdf)
+dumper('../archive/graun_top/daily_dumps', format_scrape_time, zdf)
 
-with open(f'../static/latest_smh_top.json', 'w') as f:
+with open(f'../static/latest_graun_top.json', 'w') as f:
     zdf.to_json(f, orient='records')
 
-# %%
