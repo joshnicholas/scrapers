@@ -63,7 +63,7 @@ jsony = json.loads(r.text)
 
 listo = jsony['reqTradeSummery']
 
-print(listo)
+# print(listo)
 
 if len(listo) > 1:
     df = pd.DataFrame.from_records(listo)
@@ -75,22 +75,10 @@ if len(listo) > 1:
         df.to_csv(f, index=False, header=True)
 
 
-    old = pd.read_csv('..data/cse/cse.csv')
-    old['Scrape_time']  = pd.to_datetime(old['Scrape_time'] )
+    with open('../static/cse.json', 'w') as f:
+        df.to_json(f, orient='records')
 
-    tog = pd.concat([old, df])
-    tog['Scrape_time'] = pd.to_datetime(tog['Scrape_time'])
-    tog.sort_values(by=['Scrape_time'], ascending=False, inplace=True)
-
-    tog.drop_duplicates(subset=['name', 'Date'], keep='first', inplace=True)
-
-    with open('..data/cse/cse.csv', 'w') as f:
-        tog.to_csv(f, index=False, header=True)
-
-    with open('..static/cse.json', 'w') as f:
-        tog.to_json(f, orient='records')
-
-    print('hi')
+    # print('hi')
 
 
 # old = pd.read_csv('../data/cse/cse.csv')
