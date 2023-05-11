@@ -74,13 +74,8 @@ if len(listo) > 1:
     with open(f'../archive/cse/daily_dumps/{today_stem}.csv', 'w') as f:
         df.to_csv(f, index=False, header=True)
 
+    with open(f'../archive/cse/latest.csv', 'w') as f:
+        df.to_csv(f, index=False, header=True)
 
     with open('../static/cse.json', 'w') as f:
         df.to_json(f, orient='records')
-
-    # print('hi')
-
-
-# old = pd.read_csv('../data/cse/cse.csv')
-# with open('../static/cse.json', 'w') as f:
-#     old.to_json(f, orient='records')

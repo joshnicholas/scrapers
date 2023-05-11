@@ -109,7 +109,7 @@ box = soup.find(class_='view-content')
 
 rows = soup.find_all('tr')
 
-donners = already_done('../data/foi', 'treasury')
+donners = already_done('../archive/foi', 'treasury')
 # print("donners: ", donners)
 
 for row in rows[1:]:
@@ -143,7 +143,7 @@ for row in rows[1:]:
                     "Url": urlo,
                     "File": file}
 
-            create_raw_append_csv('../data/foi', 'finance', record, "Id", 'Date')
+            create_raw_append_csv('../archive/foi', 'finance', record, "Id", 'Date')
     except AttributeError:
         continue
 

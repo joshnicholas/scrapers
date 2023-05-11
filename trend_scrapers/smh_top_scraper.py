@@ -69,28 +69,33 @@ container = soup.find("section", {"data-an-name": "Most Popular"})
 items = container.find_all("h3")
 # print(items)
 
+try:
 
-items = [{"Headline":f"{x.text.strip()}", "Url": f"{'https://www.smh.com.au' + x.a['href']}"} for x in items]
+    items = [{"Headline":f"{x.text.strip()}", "Url": f"{'https://www.smh.com.au' + x.a['href']}"} for x in items]
 
-df = pd.DataFrame(items)
+    df = pd.DataFrame(items)
 
-df['scraped_datetime']= scrape_time
+    df['scraped_datetime']= scrape_time
 
-# print(df)
+    # print(df)
 
-# %%
+    # %%
 
-zdf = df.copy()
-zdf['Rank'] = zdf.index + 1
+    zdf = df.copy()
+    zdf['Rank'] = zdf.index + 1
 
-# print(zdf)
-# %%
+    # print(zdf)
+    # %%
 
-dumper('../archive/smh_top', 'latest', zdf)
+    dumper('../archive/smh_top', 'latest', zdf)
 
-dumper('../archive/smh_top/daily_dumps', format_scrape_time, zdf)
+    dumper('../archive/smh_top/daily_dumps', format_scrape_time, zdf)
 
-with open(f'../static/latest_smh_top.json', 'w') as f:
-    zdf.to_json(f, orient='records')
+    with open(f'../static/latest_smh_top.json', 'w') as f:
+        zdf.to_json(f, orient='records')
 
-# %%
+    # %%
+
+except:
+    print("Error with SMH!")
+    pass

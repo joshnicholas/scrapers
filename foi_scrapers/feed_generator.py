@@ -17,14 +17,14 @@ scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strft
 
 # %%
 
-fillos = os.listdir('../data/foi')
-fillos = [x for x in fillos if ".csv" in x]
+fillos = os.listdir('../archive/foi')
+fillos = [x for x in fillos if (".csv" in x) and ("latest" not in x)]
 
-# print(fillos)
+print(fillos)
 
 listo = []
 for fillo in fillos:
-    inter = pd.read_csv(f'../data/foi/{fillo}')
+    inter = pd.read_csv(f'../archive/foi/{fillo}')
     listo.append(inter)
 
 cat = pd.concat(listo)
