@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup as bs
 
 import time 
 
+import dateparser
 import datetime
 from dateutil.relativedelta import relativedelta
 import pytz
@@ -111,12 +112,15 @@ for month in [this_month, next_month]:
         rows = box.find_all(class_='views-row')
 
         for row in rows:
-            # print(row)
+            print(row)
 
-            datto = row.find(class_='datetime').text.strip()
-            datto = datetime.datetime.strptime(datto, "%A %d %B %Y %H:%M%p %Z")
-            datto = datto.strftime("%Y-%m-%d")
+            init_date = row.find(class_='datetime').text.strip()
+
+            parsed = dateparser.parse(init_date)
+            # print(parsed)
+            datto = parsed.strftime("%Y-%m-%d")
             # print(datto)
+
 
             title = row.find(class_='event-name').text.strip()
             # print(title)
@@ -138,16 +142,18 @@ for month in [this_month, next_month]:
                     "Date": datto,
                     "Url": urlo}
             
-            listo.append(record)
+#             listo.append(record)
 
-            create_raw_append_csv('../archive/abs', month, record, ["Release", 'Date'], 'Date')            
+#             create_raw_append_csv('../archive/abs', month, record, ["Release", 'Date'], 'Date')            
 
-# print(rows)
-# %%
+# # print(rows)
+# # %%
 
-cat = pd.DataFrame.from_records(listo)
+# cat = pd.DataFrame.from_records(listo)
 
-with open(f'../static/latest_abs.json', 'w') as f:
-    cat.to_json(f, orient='records')
+# with open(f'../static/latest_abs.json', 'w') as f:
+#     cat.to_json(f, orient='records')
+
+# # %%
 
 # %%
