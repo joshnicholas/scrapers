@@ -12,15 +12,11 @@ from dateutil.relativedelta import relativedelta
 import pytz
 
 from selenium import webdriver 
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Firefox(options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 
 # %%
 

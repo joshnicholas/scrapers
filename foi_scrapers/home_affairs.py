@@ -15,15 +15,11 @@ import datetime
 import pytz
 
 from selenium import webdriver 
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Firefox(options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 
 from bs4 import BeautifulSoup as bs 
 
@@ -104,6 +100,9 @@ box = soup.find(class_="content")
 
 cards = box.find_all("tr", attrs={"tabindex": -1})
 # print("lenno: ", len(cards))
+# print(cards)
+
+# %%
 
 for card in cards:
     try:
@@ -115,8 +114,6 @@ for card in cards:
         datto = datetime.datetime.strptime(datto, "%d/%m/%Y")
         datto = datto.strftime("%Y-%m-%d")
         # print(datto)
-
-
 
         stemmo = teeds[1].text
         # print(stemmo)

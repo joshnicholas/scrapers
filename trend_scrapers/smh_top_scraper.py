@@ -18,7 +18,7 @@ from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-
+driver = webdriver.Chrome(options=chrome_options)
 
 # %%
 
@@ -45,7 +45,7 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 # %%
 
 
-driver = webdriver.Chrome(options=chrome_options)
+
 start_url = "https://smh.com.au"
 driver.get(start_url)
 
