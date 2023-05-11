@@ -38,7 +38,7 @@ zdf['Rank'] = zdf.index + 1
 
 zdf = zdf[['Rank', 'Search']]
 
-print(zdf)
+# print(zdf)
 
 dumper('../archive/google', 'latest', zdf)
 
