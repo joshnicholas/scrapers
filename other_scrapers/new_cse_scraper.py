@@ -68,7 +68,7 @@ listo = jsony['reqTradeSummery']
 if len(listo) > 1:
     df = pd.DataFrame.from_records(listo)
 
-    df['Scrape_time'] = scrape_time
+    df['scraped_datetime'] = scrape_time
     df['Date'] = today
 
     with open(f'../archive/cse/daily_dumps/{today_stem}.csv', 'w') as f:

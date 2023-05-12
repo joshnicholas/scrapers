@@ -39,15 +39,49 @@ def get_csv():
     return response
 
 
+@app.route('/check_archives', methods=["GET"])
+def check_folders():
+    if not "folder" in request.args:
+        return "You haven't specificed a folder"
+    folder = request.args["folder"]
+    
+    fillos = os.listdir(f"./archive/{folder}/daily_dumps")
+    fillos = list(set(fillos))
 
-    # print(month)
+    stringo = ''
 
-    # # Also make sure the requested csv file does exist
-    # if not os.path.isfile(csv_path):
-    #     return f"ERROR: file {month} was not found on the server"
-    # # Send the file back to the client
-    # return send_file(csv_path, as_attachment=True)
+    for thing in fillos:
+        stringo += f"'{thing}', "
 
+    return stringo
+
+@app.route("/get_archives", methods=['GET'])
+def get_file():
+    """ 
+    Returns the csv file requested.
+    """
+        
+    # Checking that the month parameter has been supplied
+
+    if not "file" in request.args:
+        return "You haven't specificed a file"
+    
+    pathos = request.args['pathos']
+    fillo = request.args["file"]
+
+    if "latest" in fillo:
+        csv_path = f"./archive/{pathos}/latest.csv"
+        return send_file(csv_path, as_attachment=True)
+    else:
+        csv_path = f"./archive/{pathos}/daily_dumps/{fillo}.csv"
+        return send_file(csv_path, as_attachment=True)
+
+# http://127.0.0.1:5000/get_archives?pathos=abc_top&file=2023_05_11_07
+
+# http://127.0.0.1:5000/get_archives?pathos=abc_top&file=latest
+
+
+# http://127.0.0.1:5000/check_archives?folder=abc_top
 
 # https://thambili.herokuapp.com/get_data?file=latest_foi
 

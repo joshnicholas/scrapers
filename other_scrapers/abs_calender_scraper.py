@@ -72,7 +72,7 @@ today = datetime.datetime.now()
 scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
 scrape_hour = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%H')
 
-
+scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
 # %%
 ### Get this month and next month for the scraper
 
@@ -140,7 +140,8 @@ for month in [this_month, next_month]:
             record = {"Release": title,
                     "Description": desc,
                     "Date": datto,
-                    "Url": urlo}
+                    "Url": urlo,
+                    'scraped_datetime': scrape_time}
             
 #             listo.append(record)
 

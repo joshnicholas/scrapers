@@ -52,4 +52,3 @@ zope.interface==5.5.2
 pytrends
 selenium
 dateparser
-re
