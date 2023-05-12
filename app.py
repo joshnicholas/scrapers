@@ -51,7 +51,7 @@ def check_folders():
     stringo = ''
 
     for thing in fillos:
-        stringo += f"'{thing}', "
+        stringo += f"{thing}, "
 
     return stringo
 
