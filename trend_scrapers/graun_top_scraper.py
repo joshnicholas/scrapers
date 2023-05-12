@@ -6,6 +6,7 @@ import pytz
 import datetime
 import json
 import requests
+import re
 
 import pathlib
 import os 
@@ -43,7 +44,7 @@ soup = bs(r.text, 'html.parser')
 items = soup.find_all("li", class_="most-popular__item")
 
 
-items = [{"Headline":f"{x.h3.text.strip()}", "Url": f"{x.a['href']}"} for x in items]
+items = [{"Headline":re.sub('\s+', ' ', x.h3.text.strip()), "Url": f"{x.a['href']}"} for x in items]
 
 
 # print(items)
