@@ -95,7 +95,7 @@ listo = []
 
 for month in [this_month, next_month]:
 
-    if month not in os.listdir('../archive/abs'):
+    if month not in os.listdir('../archive/abs/daily_dumps'):
 
         urlo = f'https://www.abs.gov.au/release-calendar/future-releases/{month}'
 
@@ -143,17 +143,20 @@ for month in [this_month, next_month]:
                     "Url": urlo,
                     'scraped_datetime': scrape_time}
             
-#             listo.append(record)
+            listo.append(record)
 
-#             create_raw_append_csv('../archive/abs', month, record, ["Release", 'Date'], 'Date')            
+            create_raw_append_csv('../archive/abs', month, record, ["Release", 'Date'], 'Date')            
 
 # # print(rows)
 # # %%
 
-# cat = pd.DataFrame.from_records(listo)
+cat = pd.DataFrame.from_records(listo)
 
-# with open(f'../static/latest_abs.json', 'w') as f:
-#     cat.to_json(f, orient='records')
+with open(f'../archive/abs/latest.csv', 'w') as f:
+    cat.to_csv(f, index=False, header=True)
+
+with open(f'../static/latest_abs.json', 'w') as f:
+    cat.to_json(f, orient='records')
 
 # # %%
 
