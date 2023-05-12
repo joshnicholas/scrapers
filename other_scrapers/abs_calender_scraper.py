@@ -145,7 +145,7 @@ for month in [this_month, next_month]:
             
             listo.append(record)
 
-            create_raw_append_csv('../archive/abs', month, record, ["Release", 'Date'], 'Date')            
+            create_raw_append_csv('../archive/abs/daily_dumps', month, record, ["Release", 'Date'], 'Date')            
 
 # # print(rows)
 # # %%
