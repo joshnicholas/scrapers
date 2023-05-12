@@ -50,7 +50,7 @@ items = [{"Headline":f"{x.h3.text.strip()}", "Url": f"{x.a['href']}"} for x in i
 
 df = pd.DataFrame(items)
 
-df['scraped_datetime'] = scrape_time,
+df['scraped_datetime'] = scrape_time
 
 # %%
 
