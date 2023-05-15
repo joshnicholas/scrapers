@@ -13,6 +13,9 @@ import os
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # %%
 
 from selenium import webdriver 
@@ -144,3 +147,5 @@ except Exception as e:
 
     print(f"Exception is {e}")
     print(f"Line: {sys.exc_info()[-1].tb_lineno}")
+
+

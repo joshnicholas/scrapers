@@ -98,7 +98,7 @@ wiki_r = requests.get(wiki_linko, headers=headers)
 
 print(wiki_r.url)
 
-print(wiki_r.text)
+# print(wiki_r.text)
 
 wiki_trends = json.loads(wiki_r.text)
 wiki_trends = wiki_trends['items'][0]['articles']

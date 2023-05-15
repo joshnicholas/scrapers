@@ -12,3 +12,7 @@ import abc_top_stories
 time.sleep(2)
 import graun_top_scraper
 
+
+time.sleep(2)
+import sbs_top_stories
+

@@ -1,21 +1,29 @@
 # %%
-# import requests
+import requests
 import pandas as pd 
 from bs4 import BeautifulSoup as bs 
 import pytz
 import datetime
 import json
-import requests
-import re
+
+import sys
 
 import pathlib
 import os 
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
-# %%
+from selenium import webdriver 
+from selenium.webdriver.chrome.options import Options
+
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+# chrome_options.add_argument('--no-sandbox') 
+driver = webdriver.Chrome(options=chrome_options)
+
 import time
 from github import Github
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -56,8 +64,6 @@ def send_to_git(stemmo, repo, what, frame):
 
         repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
 
-    
-
 def dumper(path, name, frame):
     with open(f'{path}/{name}.csv', 'w') as f:
         frame.to_csv(f, index=False, header=True)
@@ -80,35 +86,70 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 
 # %%
 
-r = requests.get("https://www.theguardian.com/au")
-soup = bs(r.text, 'html.parser')
-items = soup.find_all("li", class_="most-popular__item")
+
+r = requests.get("https://www.sbs.com.au/news/collection/top-stories", headers=headers)
 
 
-items = [{"Headline":re.sub('\s+', ' ', x.h3.text.strip()), "Url": f"{x.a['href']}"} for x in items]
+# start_url = "https://www.sbs.com.au/news/collection/top-stories"
+# driver.get(start_url)
 
 
-# print(items)
-
-df = pd.DataFrame(items)
-
-df['scraped_datetime'] = format_scrape_time
 
 # %%
 
-zdf = df.copy()
-zdf['Rank'] = zdf.index + 1
 
-print(zdf)
-
-
-# dumper('../archive/graun_top', 'latest', zdf)
-
-# dumper('../archive/graun_top/daily_dumps', format_scrape_time, zdf)
-
-# with open(f'../static/latest_graun_top.json', 'w') as f:
-#     zdf.to_json(f, orient='records')
+soup = bs(r.text, 'html.parser')
+div = soup.find("div", {"data-layer-event-source-title":"Top Stories"})
 
 
-send_to_git(format_scrape_time, 'Archives', 'graun_top', zdf)
+items = div.find_all("a", {"data-testid":"internal-link"})
+items = [x for x in items if x.find('h2')]
 
+print(items[:2])
+counter = 1
+
+sent = 0
+
+records = []
+
+for thing in items:
+
+    try:
+
+        heado = thing.h2.text
+
+        # print(heado)
+
+        linko = thing['href']
+        linko = 'https://www.sbs.com.au' + linko
+        # print(linko)
+
+        dicto = {"publication": "SBS",
+
+        'scraped_datetime': format_scrape_time,
+        'Headline': heado.replace("analysis:", '').strip(),
+        'Url': linko.strip(),
+        'Rank': counter
+        }
+
+        counter += 1
+
+        records.append(dicto)
+
+    except Exception as e:
+
+        print(f"Exception is {e}")
+        print(f"Line: {sys.exc_info()[-1].tb_lineno}")
+        continue
+
+
+
+
+df = pd.DataFrame.from_records(records)
+
+# print(df)
+# print(df.columns.tolist())
+
+send_to_git(format_scrape_time, 'Archives', 'sbs_top', df)
+
+# %%

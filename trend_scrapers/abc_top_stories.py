@@ -14,6 +14,9 @@ os.chdir(pathos)
 import time
 from github import Github
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # %%
 
 def send_to_git(stemmo, repo, what, frame):
