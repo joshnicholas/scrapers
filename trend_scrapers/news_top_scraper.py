@@ -53,7 +53,7 @@ soup = bs(driver.page_source.encode("utf-8"), 'html.parser')
 
 # %%
 
-print(soup)
+# print(soup)
 
 # container = soup.find("div", class_="most-pop-item")
 # items = container.find_all("li")

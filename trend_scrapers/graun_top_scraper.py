@@ -40,9 +40,9 @@ def send_to_git(stemmo, repo, what, frame):
 
         fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
 
-        print(pathos)
-        print("contents: ", contents)
-        print("fillos: ", fillos)
+        # print(pathos)
+        # print("contents: ", contents)
+        # print("fillos: ", fillos)
         return fillos
 
 
@@ -99,7 +99,7 @@ df['scraped_datetime'] = format_scrape_time
 zdf = df.copy()
 zdf['Rank'] = zdf.index + 1
 
-print(zdf)
+# print(zdf)
 
 
 # dumper('../archive/graun_top', 'latest', zdf)

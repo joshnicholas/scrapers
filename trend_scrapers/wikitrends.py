@@ -16,6 +16,10 @@ os.chdir(pathos)
 import time
 from github import Github
 
+
+from dotenv import load_dotenv
+load_dotenv()
+
 # %%
 
 def send_to_git(stemmo, repo, what, frame):
@@ -96,7 +100,7 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 
 wiki_r = requests.get(wiki_linko, headers=headers)
 
-print(wiki_r.url)
+# print(wiki_r.url)
 
 # print(wiki_r.text)
 

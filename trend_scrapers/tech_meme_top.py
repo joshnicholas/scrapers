@@ -1,14 +1,25 @@
 # %%
-import pandas as pd
-from pytrends.request import TrendReq
-import datetime
+import requests
+import pandas as pd 
+from bs4 import BeautifulSoup as bs 
 import pytz
-
+import datetime
 import json
+
+import sys
+
 import pathlib
 import os 
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
+
+from selenium import webdriver 
+from selenium.webdriver.chrome.options import Options
+
+# chrome_options = Options()
+# chrome_options.add_argument("--headless")
+# # chrome_options.add_argument('--no-sandbox') 
+# driver = webdriver.Chrome(options=chrome_options)
 
 import time
 from github import Github
@@ -53,10 +64,6 @@ def send_to_git(stemmo, repo, what, frame):
 
         repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
 
-def dumper(path, name, frame):
-    with open(f'{path}/{name}.csv', 'w') as f:
-        frame.to_csv(f, index=False, header=True)
-
 
 today = datetime.datetime.now()
 
@@ -65,33 +72,38 @@ scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strft
 scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
 format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
 
+
+headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
+'Accept-Language': "en-GB,en-US;q=0.9,en;q=0.8",
+"Referer": 'https://www.google.com',
+"DNT":'1'}
+
 # %%
 
-pytrend = TrendReq(hl='en-US', tz=360)
+r = requests.get("https://www.techmeme.com/")
 
-df = pytrend.trending_searches(pn='australia')
-df.rename(columns={0: "Search"}, inplace=True)
+soup = bs(r.text, 'html.parser')
+
+container = soup.find("div", {"id": "topcol1"})
+divs = container.find_all("div", class_="clus")
+
+
+
+# %%
+
+# print(divs[0])
+
+items = [{"Headline":f"{div.find('strong').text.strip()}", "Url": f"{div.find(class_='ourh')['href'].strip()}"} for div in divs]
+# print(items)
+# %%
+
+df = pd.DataFrame.from_records(items)
+
+df['Rank'] = df.index + 1
 
 df['scraped_datetime'] = format_scrape_time
 
+# print(df)
 # %%
 
-zdf = df.copy()
-zdf['Rank'] = zdf.index + 1
-
-zdf = zdf[['Rank', 'Search', 'scraped_datetime']]
-
-# print(zdf)
-
-# dumper('../archive/google', 'latest', zdf)
-
-# dumper('../archive/google/daily_dumps', scrape_date_stemmo, zdf)
-
-# with open(f'../static/latest_google.json', 'w') as f:
-#     zdf.to_json(f, orient='records')
-
-
-send_to_git(format_scrape_time, 'Archives', 'google', zdf)
-
-
-# %%
+send_to_git(format_scrape_time, 'Archives', 'tech_meme_top', df)

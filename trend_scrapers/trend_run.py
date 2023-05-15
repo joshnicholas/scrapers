@@ -16,3 +16,9 @@ import graun_top_scraper
 time.sleep(2)
 import sbs_top_stories
 
+time.sleep(2)
+import smh_top_scraper
+
+
+time.sleep(2)
+import tech_meme_top
