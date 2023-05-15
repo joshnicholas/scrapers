@@ -15,6 +15,11 @@ import environment
 
 time.sleep(2)
 
+print("transport")
+import transport
+
+time.sleep(2)
+
 print("finance")
 import finance
 

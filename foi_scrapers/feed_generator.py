@@ -34,10 +34,10 @@ repository = github.get_user().get_repo('Archives')
 
 def check_do(pathos):
     contents = repository.get_contents(pathos)
-    print(contents)
+    # print(contents)
     fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
 
-    print(fillos)
+    # print(fillos)
     return fillos
 
 

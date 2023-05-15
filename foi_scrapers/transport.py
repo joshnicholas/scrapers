@@ -1,5 +1,6 @@
 # %%
 import pandas as pd 
+import dateparser
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -22,7 +23,7 @@ from github import Github
 
 # %%
 
-agency = 'environment'
+agency = 'transport'
 
 def send_foi_to_git(stemmo, repo, what, agent, frame):
 
@@ -44,9 +45,9 @@ def send_foi_to_git(stemmo, repo, what, agent, frame):
 
         fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
 
-        # print(pathos)
-        # print("contents: ", contents)
-        # print("fillos: ", fillos)
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
         return fillos
 
     donners = check_do(f'Archive/{what}/daily_dumps')
@@ -65,16 +66,15 @@ def send_foi_to_git(stemmo, repo, what, agent, frame):
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
-# print("cwd:", os.getcwd())
 
-#%%
+# %%
 
 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
 'Accept-Language': "en-GB,en-US;q=0.9,en;q=0.8",
 "Referer": 'https://www.google.com',
 "DNT":'1'}
 
-urlo = 'https://www.dcceew.gov.au/about/reporting/freedom-of-information/disclosure-log'
+urlo = 'https://www.infrastructure.gov.au/about-us/freedom-information/freedom-information-disclosure-log'
 home = urlo
 r = requests.get(urlo, headers=headers)
 
@@ -85,8 +85,6 @@ soup = bs(r.text, 'html.parser')
 
 rows = soup.find_all('tr')
 
-# donners = already_done('../archive/foi', 'treasury')
-# print("donners: ", donners)
 
 listo = []
 
@@ -96,25 +94,24 @@ for row in rows[1:]:
 
     try:
 
-        stemmo = row.find(attrs={"headers":"view-field-reference-table-column"}).text.strip()
+        cells = row.find_all('td')
+
+        stemmo = cells[1].text.strip()
         # print(stemmo)
 
-        # if stemmo not in donners:
         
-        datto = row.find(class_='datetime').text.strip()
-        datto = datetime.datetime.strptime(datto, "%d %B %Y")
-        datto = datto.strftime("%Y-%m-%d")
+        datter = cells[0].text.strip()
+
+        parsed = dateparser.parse(datter)
+        datto = parsed.strftime("%Y-%m-%d")
         # print(datto)
 
-        title = row.find(attrs={"headers":"view-field-summary-table-column"}).text.strip()
+        title = cells[2].text.strip()
         # print(title)
 
-        # urlo = row.find(attrs={"headers":"view-title-table-column"}).a['href']
-        urlo = row.find(class_='file--application-pdf').a['href']
-        # print(urlo)
+        fillo_path = cells[1].a['href']
+        fillo = 'https://www.infrastructure.gov.au/' + fillo_path
 
-        file = 'https://www.dcceew.gov.au/' + urlo
-        # print(file)
 
         record = {"Agency": "Environment",
                 "Date": datto,
@@ -122,25 +119,22 @@ for row in rows[1:]:
                 "Title": title,
                 "Url": urlo,
                 "Home_url": home,
-                "File": file}
+                "File": fillo}
         listo.append(record)
 
 
-    except AttributeError as e:
+        print(record)
+
+    except Exception as e:
 
         print(urlo)
         print(f"Exception is {e}")
         print(f"Line: {sys.exc_info()[-1].tb_lineno}")
         continue
 
+# %%
+
 
 cat = pd.DataFrame.from_records(listo)
 
 send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)
-    
-    # print(record)
-    # create_raw_append_csv('../archive/foi', 'environment', record, "Id", 'Date')
-
-# print(rows[1])
-# %%
-# https://www.dcceew.gov.au/about/reporting/freedom-of-information/disclosure-log#:~:text=Environment%20and%20Water-,72528.pdf,-72894
