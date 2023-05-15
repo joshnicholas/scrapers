@@ -53,3 +53,4 @@ pytrends
 selenium
 dateparser
 pygithub
+dotenv
