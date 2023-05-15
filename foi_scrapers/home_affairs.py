@@ -28,43 +28,57 @@ from bs4 import BeautifulSoup as bs
 
 this_year = datetime.datetime.now().strftime("%Y")
 
+import os 
+import pathlib
+
+today = datetime.datetime.now()
+scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
+scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
+format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
+
+import json 
+import time
+from github import Github
 
 # %%
 
-##
-def dumper(path, name, frame):
-    with open(f'{path}/{name}.csv', 'w') as f:
-        frame.to_csv(f, index=False, header=True)
+agency = 'home_affairs'
 
-##
-def rand_delay(num):
-  import random 
-  import time 
-  rando = random.random() * num
-  print(rando)
-  time.sleep(rando)
+def send_foi_to_git(stemmo, repo, what, agent, frame):
 
-def create_raw_append_csv(pathos, nammo, new_record, drop_col, sort_col):
+    tokeny = os.environ['gitty']
 
-    new = pd.DataFrame.from_records([new_record])
+    github = Github(tokeny)
 
-    if pathos[-1] != '/':
-        pathos += '/'
-    # print("cwd:", os.getcwd())
-    fillos = os.listdir(pathos)
+    repository = github.get_user().get_repo(repo)
 
-    if f'{nammo}.csv' not in fillos:
-        # print("if")
-        dumper(pathos, nammo, new)
-    
-    else:
-        # print("else")
-        old = pd.read_csv(f"{pathos}{nammo}.csv")
+    jsony = frame.to_dict(orient='records')
+    content = json.dumps(jsony)
 
-        tog = pd.concat([new, old])
-        tog.drop_duplicates(subset=[drop_col], inplace=True)
-        tog.sort_values(by=[sort_col], ascending=False, inplace=True)
-        dumper(pathos, nammo, tog)
+    filename = f'Archive/{what}/daily_dumps/{stemmo}.json'
+
+    inter = f'Archive/{what}/inter/{agent}.json'
+
+    def check_do(pathos):
+        contents = repository.get_contents(pathos)
+
+        fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
+
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
+        return fillos
+
+    donners = check_do(f'Archive/{what}/daily_dumps')
+
+    latters = repository.get_contents(inter)
+    repository.update_file(inter, f"updated_scraped_file_{stemmo}", content, latters.sha)
+
+    if f"{stemmo}.json" not in donners:
+
+        repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
+
+
 
 
 # %%
@@ -94,7 +108,7 @@ soup = bs(driver.page_source, 'html.parser')
 
 box = soup.find(class_="content")
 
-
+print(urlo)
 
 # %%
 
@@ -103,6 +117,9 @@ cards = box.find_all("tr", attrs={"tabindex": -1})
 # print(cards)
 
 # %%
+
+
+listo = []
 
 for card in cards:
     try:
@@ -127,10 +144,10 @@ for card in cards:
         # print(title)
 
         # print(pees)
-        urlo = pees[1].a['href']
+        file_path = pees[1].a['href']
         # print(urlo)
 
-        file = 'https://www.homeaffairs.gov.au' + urlo
+        file = 'https://www.homeaffairs.gov.au' + file_path
         # print(file)
 
         record = {"Agency": "Home Affairs",
@@ -141,12 +158,17 @@ for card in cards:
                 "Home_url": home,
                   "File": file}
         
-        create_raw_append_csv('../archive/foi', 'home_affairs', record, "Id", 'Date')
+        listo.append(record)
+
 
     except Exception as e:
+
+        print(urlo)
         print(f"Exception is {e}")
         print(f"Line: {sys.exc_info()[-1].tb_lineno}")
         continue
 
 
-# %%
+cat = pd.DataFrame.from_records(listo)
+
+send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)

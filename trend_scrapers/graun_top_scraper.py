@@ -14,8 +14,47 @@ pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
 # %%
+import time
+from github import Github
 
 # %%
+
+def send_to_git(stemmo, repo, what, frame):
+
+    tokeny = os.environ['gitty']
+
+    github = Github(tokeny)
+
+    repository = github.get_user().get_repo(repo)
+
+    jsony = frame.to_dict(orient='records')
+    content = json.dumps(jsony)
+
+    filename = f'Archive/{what}/daily_dumps/{stemmo}.json'
+    latest = f'Archive/{what}/latest.json'
+
+    def check_do(pathos):
+        contents = repository.get_contents(pathos)
+
+        fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
+
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
+        return fillos
+
+
+    # latest_donners = check_do(f'Archive/{what}')
+    donners = check_do(f'Archive/{what}/daily_dumps')
+
+    latters = repository.get_contents(latest)
+    repository.update_file(latest, f"updated_scraped_file_{stemmo}", content, latters.sha)
+
+    if f"{stemmo}.json" not in donners:
+
+        repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
+
+    
 
 def dumper(path, name, frame):
     with open(f'{path}/{name}.csv', 'w') as f:
@@ -51,18 +90,23 @@ items = [{"Headline":re.sub('\s+', ' ', x.h3.text.strip()), "Url": f"{x.a['href'
 
 df = pd.DataFrame(items)
 
-df['scraped_datetime'] = scrape_time
+df['scraped_datetime'] = format_scrape_time
 
 # %%
 
 zdf = df.copy()
 zdf['Rank'] = zdf.index + 1
 
+print(zdf)
 
-dumper('../archive/graun_top', 'latest', zdf)
 
-dumper('../archive/graun_top/daily_dumps', format_scrape_time, zdf)
+# dumper('../archive/graun_top', 'latest', zdf)
 
-with open(f'../static/latest_graun_top.json', 'w') as f:
-    zdf.to_json(f, orient='records')
+# dumper('../archive/graun_top/daily_dumps', format_scrape_time, zdf)
+
+# with open(f'../static/latest_graun_top.json', 'w') as f:
+#     zdf.to_json(f, orient='records')
+
+
+send_to_git(format_scrape_time, 'Archives', 'graun_top', zdf)
 

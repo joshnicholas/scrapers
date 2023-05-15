@@ -7,59 +7,60 @@ from bs4 import BeautifulSoup as bs
 import datetime 
 import pytz
 
+import sys
+
 import os 
 import pathlib
 
+today = datetime.datetime.now()
+scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
+scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
+format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
+
+import json 
+import time
+from github import Github
+
 # %%
 
+agency = 'finance'
 
-##
-def dumper(path, name, frame):
-    with open(f'{path}/{name}.csv', 'w') as f:
-        frame.to_csv(f, index=False, header=True)
+def send_foi_to_git(stemmo, repo, what, agent, frame):
 
-##
-def rand_delay(num):
-  import random 
-  import time 
-  rando = random.random() * num
-  print(rando)
-  time.sleep(rando)
+    tokeny = os.environ['gitty']
 
-def already_done(pathos, stemmo):
+    github = Github(tokeny)
 
-    if pathos[-1] != '/':
-        pathos += '/'
+    repository = github.get_user().get_repo(repo)
 
-    if f'{stemmo}.csv' in os.listdir(pathos):
-        inter = pd.read_csv(f"{pathos}{stemmo}.csv")
-        uniques = inter['Id'].unique().tolist()
-        return uniques
-    else:
-        return []
+    jsony = frame.to_dict(orient='records')
+    content = json.dumps(jsony)
 
-def create_raw_append_csv(pathos, nammo, new_record, drop_col, sort_col):
+    filename = f'Archive/{what}/daily_dumps/{stemmo}.json'
 
-    new = pd.DataFrame.from_records([new_record])
+    inter = f'Archive/{what}/inter/{agent}.json'
 
-    if pathos[-1] != '/':
-        pathos += '/'
-    # print("cwd:", os.getcwd())
-    fillos = os.listdir(pathos)
-    # print(fillos)
-    if f'{nammo}.csv' not in fillos:
-        # print("if")
-        dumper(pathos, nammo, new)
-    
-    else:
-        # print("else")
-        old = pd.read_csv(f"{pathos}{nammo}.csv")
+    def check_do(pathos):
+        contents = repository.get_contents(pathos)
 
-        tog = pd.concat([new, old])
-        tog.drop_duplicates(subset=[drop_col], inplace=True)
-        tog.sort_values(by=[sort_col], ascending=False, inplace=True)
-        dumper(pathos, nammo, tog)
-    
+        fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
+
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
+        return fillos
+
+    donners = check_do(f'Archive/{what}/daily_dumps')
+
+    latters = repository.get_contents(inter)
+    repository.update_file(inter, f"updated_scraped_file_{stemmo}", content, latters.sha)
+
+    if f"{stemmo}.json" not in donners:
+
+        repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
+
+
+
 
 # %%
 
@@ -109,9 +110,10 @@ box = soup.find(class_='view-content')
 
 rows = soup.find_all('tr')
 
-donners = already_done('../archive/foi', 'treasury')
+
 # print("donners: ", donners)
 
+listo= []
 for row in rows[1:]:
     try:
 
@@ -119,35 +121,42 @@ for row in rows[1:]:
         stemmo = row.find(attrs={"headers":"view-field-finance-foi-reference-table-column"}).text.strip()
         # print(stemmo)
 
-        if stemmo not in donners:
+
         
-            datto = row.find(class_='datetime').text.strip()
-            datto = datetime.datetime.strptime(datto, "%d %B %Y")
-            datto = datto.strftime("%Y-%m-%d")
-            # print(datto)
+        datto = row.find(class_='datetime').text.strip()
+        datto = datetime.datetime.strptime(datto, "%d %B %Y")
+        datto = datto.strftime("%Y-%m-%d")
+        # print(datto)
 
-            title = row.find(attrs={"headers":"view-title-table-column"}).text.strip()
-            # print(title)
+        title = row.find(attrs={"headers":"view-title-table-column"}).text.strip()
+        # print(title)
 
-            urlo = row.find(attrs={"headers":"view-title-table-column"}).a['href']
-            # print(urlo)
+        urlo = row.find(attrs={"headers":"view-title-table-column"}).a['href']
+        # print(urlo)
 
-            file = 'https://www.finance.gov.au/' + urlo
-            # print(file)
+        file = 'https://www.finance.gov.au/' + urlo
+        # print(file)
 
-            record = {"Agency": "Finance",
-                    "Date": datto,
-                    "Id": stemmo,
-                    "Title": title,
-                    "Home_url": home,
-                    "Url": urlo,
-                    "File": file}
+        record = {"Agency": "Finance",
+                "Date": datto,
+                "Id": stemmo,
+                "Title": title,
+                "Home_url": home,
+                "Url": urlo,
+                "File": file}
 
-            create_raw_append_csv('../archive/foi', 'finance', record, "Id", 'Date')
-    except AttributeError:
+
+        listo.append(record)
+
+
+    except AttributeError as e:
+
+        print(urlo)
+        print(f"Exception is {e}")
+        print(f"Line: {sys.exc_info()[-1].tb_lineno}")
         continue
 
 
+cat = pd.DataFrame.from_records(listo)
 
-# print(rows[1])
-# %%
+send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)

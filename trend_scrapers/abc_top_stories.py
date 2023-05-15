@@ -11,8 +11,45 @@ import os
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
+import time
+from github import Github
 
 # %%
+
+def send_to_git(stemmo, repo, what, frame):
+
+    tokeny = os.environ['gitty']
+
+    github = Github(tokeny)
+
+    repository = github.get_user().get_repo(repo)
+
+    jsony = frame.to_dict(orient='records')
+    content = json.dumps(jsony)
+
+    filename = f'Archive/{what}/daily_dumps/{stemmo}.json'
+    latest = f'Archive/{what}/latest.json'
+
+    def check_do(pathos):
+        contents = repository.get_contents(pathos)
+
+        fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
+
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
+        return fillos
+
+
+    # latest_donners = check_do(f'Archive/{what}')
+    donners = check_do(f'Archive/{what}/daily_dumps')
+
+    latters = repository.get_contents(latest)
+    repository.update_file(latest, f"updated_scraped_file_{stemmo}", content, latters.sha)
+
+    if f"{stemmo}.json" not in donners:
+
+        repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
 
 def dumper(path, name, frame):
     with open(f'{path}/{name}.csv', 'w') as f:
@@ -67,7 +104,7 @@ for thing in items:
 
     dicto = {"publication": "ABC",
 
-    'scraped_datetime': scrape_time,
+    'scraped_datetime': format_scrape_time,
     'Headline': heado.replace("analysis:", '').strip(),
     'Url': urlo.strip(),
     'Rank': counter
@@ -81,10 +118,19 @@ for thing in items:
 
 df = pd.DataFrame.from_records(records)
 
-dumper('../archive/abc_top', 'latest', df)
+# dumper('../archive/abc_top', 'latest', df)
 
-dumper('../archive/abc_top/daily_dumps', format_scrape_time, df)
+# dumper('../archive/abc_top/daily_dumps', format_scrape_time, df)
 
-with open(f'../static/latest_abc_top.json', 'w') as f:
-    df.to_json(f, orient='records')
+# with open(f'../static/latest_abc_top.json', 'w') as f:
+#     df.to_json(f, orient='records')
+
+print(df)
+
+
+
+
+
+send_to_git(format_scrape_time, 'Archives', 'abc_top', df)
+
 # %%

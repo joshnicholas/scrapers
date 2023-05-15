@@ -17,11 +17,54 @@ utc_now = pytz.utc.localize(datetime.datetime.utcnow())
 today = utc_now.astimezone(pytz.timezone("Asia/Colombo"))
 
 
-today_stem = today.strftime('%Y%m%d')
-scrape_time = datetime.datetime.utcnow()
-today = today.strftime('%Y-%m-%d')
+today = datetime.datetime.now()
 
-#%%
+scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
+
+scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
+format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
+
+import json 
+import time
+from github import Github
+
+# %%
+
+def send_to_git(stemmo, repo, what, frame):
+
+    tokeny = os.environ['gitty']
+
+    github = Github(tokeny)
+
+    repository = github.get_user().get_repo(repo)
+
+    jsony = frame.to_dict(orient='records')
+    content = json.dumps(jsony)
+
+    filename = f'Archive/{what}/daily_dumps/{stemmo}.json'
+    latest = f'Archive/{what}/latest.json'
+
+    def check_do(pathos):
+        contents = repository.get_contents(pathos)
+
+        fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
+
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
+        return fillos
+
+
+    # latest_donners = check_do(f'Archive/{what}')
+    donners = check_do(f'Archive/{what}/daily_dumps')
+
+    latters = repository.get_contents(latest)
+    repository.update_file(latest, f"updated_scraped_file_{stemmo}", content, latters.sha)
+
+    if f"{stemmo}.json" not in donners:
+
+        repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
+        
 
 
 cookies = {
@@ -68,14 +111,17 @@ listo = jsony['reqTradeSummery']
 if len(listo) > 1:
     df = pd.DataFrame.from_records(listo)
 
-    df['scraped_datetime'] = scrape_time
-    df['Date'] = today
+    df['scraped_datetime'] = format_scrape_time
+    df['Date'] = scrape_date_stemmo
 
-    with open(f'../archive/cse/daily_dumps/{today_stem}.csv', 'w') as f:
-        df.to_csv(f, index=False, header=True)
+    # with open(f'../archive/cse/daily_dumps/{today_stem}.csv', 'w') as f:
+    #     df.to_csv(f, index=False, header=True)
 
-    with open(f'../archive/cse/latest.csv', 'w') as f:
-        df.to_csv(f, index=False, header=True)
+    # with open(f'../archive/cse/latest.csv', 'w') as f:
+    #     df.to_csv(f, index=False, header=True)
 
-    with open('../static/cse.json', 'w') as f:
-        df.to_json(f, orient='records')
+    # with open('../static/cse.json', 'w') as f:
+    #     df.to_json(f, orient='records')
+
+
+    send_to_git(format_scrape_time, 'Archives', 'cse', df)

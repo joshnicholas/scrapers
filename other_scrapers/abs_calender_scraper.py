@@ -19,7 +19,48 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(options=chrome_options)
 
+import json 
+import time
+from github import Github
+
 # %%
+
+def send_to_git(stemmo, repo, what, frame):
+
+    tokeny = os.environ['gitty']
+
+    github = Github(tokeny)
+
+    repository = github.get_user().get_repo(repo)
+
+    jsony = frame.to_dict(orient='records')
+    content = json.dumps(jsony)
+
+    filename = f'Archive/{what}/daily_dumps/{stemmo}.json'
+    latest = f'Archive/{what}/latest.json'
+
+    def check_do(pathos):
+        contents = repository.get_contents(pathos)
+
+        fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
+
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
+        return fillos
+
+
+    # latest_donners = check_do(f'Archive/{what}')
+    donners = check_do(f'Archive/{what}/daily_dumps')
+
+    latters = repository.get_contents(latest)
+    repository.update_file(latest, f"updated_scraped_file_{stemmo}", content, latters.sha)
+
+    if f"{stemmo}.json" not in donners:
+
+        repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
+        
+
 
 ##
 def dumper(path, name, frame):
@@ -69,10 +110,12 @@ def create_raw_append_csv(pathos, nammo, new_record, drop_cols, sort_col):
 # %%
 
 today = datetime.datetime.now()
+
 scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
-scrape_hour = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%H')
 
 scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
+format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
+
 # %%
 ### Get this month and next month for the scraper
 
@@ -141,7 +184,7 @@ for month in [this_month, next_month]:
                     "Description": desc,
                     "Date": datto,
                     "Url": urlo,
-                    'scraped_datetime': scrape_time}
+                    'scraped_datetime': format_scrape_time}
             
             listo.append(record)
 
@@ -152,11 +195,15 @@ for month in [this_month, next_month]:
 
 cat = pd.DataFrame.from_records(listo)
 
-with open(f'../archive/abs/latest.csv', 'w') as f:
-    cat.to_csv(f, index=False, header=True)
+print(cat)
 
-with open(f'../static/latest_abs.json', 'w') as f:
-    cat.to_json(f, orient='records')
+# with open(f'../archive/abs/latest.csv', 'w') as f:
+#     cat.to_csv(f, index=False, header=True)
+
+# with open(f'../static/latest_abs.json', 'w') as f:
+#     cat.to_json(f, orient='records')
+
+send_to_git(format_scrape_time, 'Archives', 'abs', cat)
 
 # # %%
 

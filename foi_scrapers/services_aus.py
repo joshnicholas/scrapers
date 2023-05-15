@@ -4,6 +4,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
 
+from dateparser.search import search_dates
 import datetime 
 import pytz
 import sys
@@ -11,58 +12,52 @@ import sys
 import os 
 import pathlib
 
-pathos = pathlib.Path(__file__).parent
-os.chdir(pathos)
+today = datetime.datetime.now()
+scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
+scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
+format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
+
+import json 
+import time
+from github import Github
 
 # %%
 
-##
-def dumper(path, name, frame):
-    with open(f'{path}/{name}.csv', 'w') as f:
-        frame.to_csv(f, index=False, header=True)
+agency = 'services'
 
-##
-def rand_delay(num):
-  import random 
-  import time 
-  rando = random.random() * num
-  print(rando)
-  time.sleep(rando)
+def send_foi_to_git(stemmo, repo, what, agent, frame):
 
-def already_done(pathos, stemmo):
+    tokeny = os.environ['gitty']
 
-    if pathos[-1] != '/':
-        pathos += '/'
+    github = Github(tokeny)
 
-    if f'{stemmo}.csv' in os.listdir(pathos):
-        inter = pd.read_csv(f"{pathos}{stemmo}.csv")
-        uniques = inter['Id'].unique().tolist()
-        return uniques
-    else:
-        return []
+    repository = github.get_user().get_repo(repo)
 
-def create_raw_append_csv(pathos, nammo, new_record, drop_col, sort_col):
+    jsony = frame.to_dict(orient='records')
+    content = json.dumps(jsony)
 
-    new = pd.DataFrame.from_records([new_record])
+    filename = f'Archive/{what}/daily_dumps/{stemmo}.json'
 
-    if pathos[-1] != '/':
-        pathos += '/'
-    # print("cwd:", os.getcwd())
-    fillos = os.listdir(pathos)
-    # print(fillos)
-    if f'{nammo}.csv' not in fillos:
-        # print("if")
-        dumper(pathos, nammo, new)
-    
-    else:
-        # print("else")
-        old = pd.read_csv(f"{pathos}{nammo}.csv")
+    inter = f'Archive/{what}/inter/{agent}.json'
 
-        tog = pd.concat([new, old])
-        tog.drop_duplicates(subset=[drop_col], inplace=True)
-        tog.sort_values(by=[sort_col], ascending=False, inplace=True)
-        
-        dumper(pathos, nammo, tog)
+    def check_do(pathos):
+        contents = repository.get_contents(pathos)
+
+        fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
+
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
+        return fillos
+
+    donners = check_do(f'Archive/{what}/daily_dumps')
+
+    latters = repository.get_contents(inter)
+    repository.update_file(inter, f"updated_scraped_file_{stemmo}", content, latters.sha)
+
+    if f"{stemmo}.json" not in donners:
+
+        repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
     
 
 #%%
@@ -81,49 +76,42 @@ soup = bs(r.text, 'html.parser')
 
 # %%
 
+
 rows = soup.find_all('tr')
 
-donners = already_done('../data/foi', 'services_aus')
-# print("donners: ", donners)
+listo = []
 
-for row in rows[1:]:
+for row in rows[1:5]:
 
     # print(row)
 
     try:
 
-        stemmo = row.find(attrs={"headers":"view-field-reference-table-column"}).text.strip()
-        # print(stemmo)
+        stringo = row.text
+        # print(stringo)
 
-        if stemmo not in donners:
-        
-            datto = row.find(class_='datetime').text.strip()
-            datto = datetime.datetime.strptime(datto, "%d %B %Y")
-            datto = datto.strftime("%Y-%m-%d")
-            # print(datto)
+        datter = search_dates(stringo)
+        datto = datetime.datetime.strptime(datter[0][0], "%d %B %Y")
+        use_date = datto.strftime("%Y-%m-%d")
 
-            title = row.find(attrs={"headers":"view-field-summary-table-column"}).text.strip()
-            # print(title)
 
-            # urlo = row.find(attrs={"headers":"view-title-table-column"}).a['href']
-            urlo = row.find(class_='file--application-pdf').a['href']
-            # print(urlo)
 
-            file = 'https://www.dcceew.gov.au/' + urlo
-            # print(file)
+        title = row.find_all('p')[0].text.strip()
+        # print(title)
 
-            record = {"Agency": "Services Australia",
-                    "Date": datto,
-                    "Id": stemmo,
-                    "Title": title,
-                    "Url": urlo,
-                    "Home_url": home,
-                    "File": file}
-            
-            # print(record)
-            create_raw_append_csv('../data/foi', 'services_aus', record, "Id", 'Date')
+        file = 'https://www.servicesaustralia.gov.au/freedom-information-disclosure-log' 
 
-    except AttributeError as e:
+        record = {"Agency": "Services Australia",
+                "Date": use_date,
+                "Id":title.replace(" ", '').strip().lower(), 
+                "Title": title,
+                "Url": urlo,
+                "Home_url": home,
+                "File": file}
+        print(record)
+        listo.append(record)
+
+    except Exception as e:
 
         print(urlo)
         print(f"Exception is {e}")
@@ -131,5 +119,11 @@ for row in rows[1:]:
         continue
 
 
+
     
+# %%
+
+cat = pd.DataFrame.from_records(listo)
+
+send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)
 # %%

@@ -23,6 +23,8 @@ def already_done(path, stemmo):
 
 paths = ['abc_top','abs','foi', 'cse', 'google', 'graun_top', 'smh_top', 'wiki']
 
+# paths = ['abc_top', 'graun_top']
+
 for thing in paths:
     print(thing)
     donners = already_done(init, thing)
@@ -34,7 +36,7 @@ for thing in paths:
 
     appy = r.text.split(",")
 
-    # print("In app: ", appy)
+    print("In app: ", appy)
 
     diff = [x for x in appy if (x.strip() not in donners) & (x != ' ')]
     # diff = ['202305.csv']

@@ -21,7 +21,45 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument('--no-sandbox') 
 driver = webdriver.Chrome(options=chrome_options)
 
+import time
+from github import Github
+
 # %%
+
+def send_to_git(stemmo, repo, what, frame):
+
+    tokeny = os.environ['gitty']
+
+    github = Github(tokeny)
+
+    repository = github.get_user().get_repo(repo)
+
+    jsony = frame.to_dict(orient='records')
+    content = json.dumps(jsony)
+
+    filename = f'Archive/{what}/daily_dumps/{stemmo}.json'
+    latest = f'Archive/{what}/latest.json'
+
+    def check_do(pathos):
+        contents = repository.get_contents(pathos)
+
+        fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
+
+        print(pathos)
+        print("contents: ", contents)
+        print("fillos: ", fillos)
+        return fillos
+
+
+    # latest_donners = check_do(f'Archive/{what}')
+    donners = check_do(f'Archive/{what}/daily_dumps')
+
+    latters = repository.get_contents(latest)
+    repository.update_file(latest, f"updated_scraped_file_{stemmo}", content, latters.sha)
+
+    if f"{stemmo}.json" not in donners:
+
+        repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
 
 def dumper(path, name, frame):
     with open(f'{path}/{name}.csv', 'w') as f:
@@ -77,7 +115,7 @@ try:
 
     df = pd.DataFrame(items)
 
-    df['scraped_datetime']= scrape_time
+    df['scraped_datetime']= format_scrape_time 
 
     # print(df)
 
@@ -89,12 +127,14 @@ try:
     # print(zdf)
     # %%
 
-    dumper('../archive/smh_top', 'latest', zdf)
+    # dumper('../archive/smh_top', 'latest', zdf)
 
-    dumper('../archive/smh_top/daily_dumps', format_scrape_time, zdf)
+    # dumper('../archive/smh_top/daily_dumps', format_scrape_time, zdf)
 
-    with open(f'../static/latest_smh_top.json', 'w') as f:
-        zdf.to_json(f, orient='records')
+    # with open(f'../static/latest_smh_top.json', 'w') as f:
+    #     zdf.to_json(f, orient='records')
+
+    send_to_git(format_scrape_time, 'Archives', 'smh_top', zdf)
 
     # %%
 
