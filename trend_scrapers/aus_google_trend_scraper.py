@@ -11,7 +11,7 @@ pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
 import time
-from github import Github
+from github import Github, UnknownObjectException
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -42,16 +42,24 @@ def send_to_git(stemmo, repo, what, frame):
         # print("fillos: ", fillos)
         return fillos
 
+    def try_file(pathos):
+        try:
+            repository.get_contents(pathos)
+            return True
+        except UnknownObjectException as e:
+            return False
 
     # latest_donners = check_do(f'Archive/{what}')
-    donners = check_do(f'Archive/{what}/daily_dumps')
+    # donners = check_do(f'Archive/{what}/daily_dumps')
+    donners = try_file(filename)
 
     latters = repository.get_contents(latest)
     repository.update_file(latest, f"updated_scraped_file_{stemmo}", content, latters.sha)
 
-    if f"{stemmo}.json" not in donners:
+    if donners == False:
 
         repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
+        
 
 def dumper(path, name, frame):
     with open(f'{path}/{name}.csv', 'w') as f:

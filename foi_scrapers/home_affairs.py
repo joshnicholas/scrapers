@@ -38,11 +38,14 @@ format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
 
 import json 
 import time
-from github import Github
+from github import Github, UnknownObjectException
+
+from dotenv import load_dotenv
+load_dotenv()
 
 # %%
 
-agency = 'home_affairs'
+agency = 'environment'
 
 def send_foi_to_git(stemmo, repo, what, agent, frame):
 
@@ -64,17 +67,28 @@ def send_foi_to_git(stemmo, repo, what, agent, frame):
 
         fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
 
-        print(pathos)
-        print("contents: ", contents)
-        print("fillos: ", fillos)
+        # print(pathos)
+        # print("contents: ", contents)
+        # print("fillos: ", fillos)
         return fillos
 
-    donners = check_do(f'Archive/{what}/daily_dumps')
+    # donners = check_do(f'Archive/{what}/daily_dumps')
+
+    def try_file(pathos):
+        try:
+            repository.get_contents(pathos)
+            return True
+        except UnknownObjectException as e:
+            return False
+
+    # latest_donners = check_do(f'Archive/{what}')
+    # donners = check_do(f'Archive/{what}/daily_dumps')
+    donners = try_file(filename)
 
     latters = repository.get_contents(inter)
     repository.update_file(inter, f"updated_scraped_file_{stemmo}", content, latters.sha)
 
-    if f"{stemmo}.json" not in donners:
+    if donners == False:
 
         repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
 

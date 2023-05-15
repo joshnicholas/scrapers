@@ -25,5 +25,10 @@ import finance
 
 time.sleep(2)
 
+print("services")
+import services_aus
+
+time.sleep(2)
+
 print("Feed generator")
 import feed_generator

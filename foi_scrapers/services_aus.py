@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 from dateparser.search import search_dates
+import dateparser
 import datetime 
 import pytz
 import sys
@@ -19,11 +20,14 @@ format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
 
 import json 
 import time
-from github import Github
+from github import Github, UnknownObjectException
+
+from dotenv import load_dotenv
+load_dotenv()
 
 # %%
 
-agency = 'services'
+agency = 'environment'
 
 def send_foi_to_git(stemmo, repo, what, agent, frame):
 
@@ -45,17 +49,28 @@ def send_foi_to_git(stemmo, repo, what, agent, frame):
 
         fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
 
-        print(pathos)
-        print("contents: ", contents)
-        print("fillos: ", fillos)
+        # print(pathos)
+        # print("contents: ", contents)
+        # print("fillos: ", fillos)
         return fillos
 
-    donners = check_do(f'Archive/{what}/daily_dumps')
+    # donners = check_do(f'Archive/{what}/daily_dumps')
+
+    def try_file(pathos):
+        try:
+            repository.get_contents(pathos)
+            return True
+        except UnknownObjectException as e:
+            return False
+
+    # latest_donners = check_do(f'Archive/{what}')
+    # donners = check_do(f'Archive/{what}/daily_dumps')
+    donners = try_file(filename)
 
     latters = repository.get_contents(inter)
     repository.update_file(inter, f"updated_scraped_file_{stemmo}", content, latters.sha)
 
-    if f"{stemmo}.json" not in donners:
+    if donners == False:
 
         repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
     
@@ -91,7 +106,8 @@ for row in rows[1:5]:
         # print(stringo)
 
         datter = search_dates(stringo)
-        datto = datetime.datetime.strptime(datter[0][0], "%d %B %Y")
+        # datto = datetime.datetime.strptime(datter[0][0], "%d %B %Y")
+        datto = dateparser.parse(datter[0][0])
         use_date = datto.strftime("%Y-%m-%d")
 
 
@@ -108,7 +124,7 @@ for row in rows[1:5]:
                 "Url": urlo,
                 "Home_url": home,
                 "File": file}
-        print(record)
+        # print(record)
         listo.append(record)
 
     except Exception as e:
