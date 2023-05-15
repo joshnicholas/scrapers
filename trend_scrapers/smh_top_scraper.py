@@ -6,6 +6,8 @@ import pytz
 import datetime
 import json
 
+import sys 
+
 import pathlib
 import os 
 pathos = pathlib.Path(__file__).parent
@@ -18,7 +20,7 @@ from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-chrome_options.add_argument('--no-sandbox') 
+# chrome_options.add_argument('--no-sandbox') 
 driver = webdriver.Chrome(options=chrome_options)
 
 import time
@@ -138,7 +140,7 @@ try:
 
     # %%
 
-except:
-    print("Error with SMH!")
-    print(driver.page_source)
-    pass
+except Exception as e:
+
+    print(f"Exception is {e}")
+    print(f"Line: {sys.exc_info()[-1].tb_lineno}")
