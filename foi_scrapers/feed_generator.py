@@ -24,7 +24,9 @@ scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strft
 
 selected_date = pd.date_range(today.date() - pd.to_timedelta(14, unit='d'), today, freq='D')
 
-print(selected_date)
+scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
+format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
+# print(selected_date)
 
 # %%
 
@@ -74,7 +76,7 @@ content = json.dumps(jsony)
 inter = f'Archive/foi/latest.json'
 
 latters = repository.get_contents(inter)
-repository.update_file(inter, f"updated_scraped_file", content, latters.sha)
+repository.update_file(inter, f"updated_scraped_file_{format_scrape_time}", content, latters.sha)
 
 
 # %%

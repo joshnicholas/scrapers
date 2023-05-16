@@ -130,7 +130,7 @@ for row in rows[1:10]:
         record = {"Agency": "Environment",
                 "Date": datto,
                 "Id": stemmo,
-                "Title": title,
+                "Title": title.encode().decode("utf-8"),
                 "Url": urlo,
                 "Home_url": home,
                 "File": fillo}
@@ -151,4 +151,4 @@ for row in rows[1:10]:
 
 cat = pd.DataFrame.from_records(listo)
 
-# send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)
+send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)

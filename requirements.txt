@@ -54,3 +54,4 @@ selenium
 dateparser
 pygithub
 python-dotenv
+unicodedata

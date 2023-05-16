@@ -113,14 +113,15 @@ for row in rows[1:5]:
 
 
         title = row.find_all('p')[0].text.strip()
+        stemmo = "".join(title.split(' ')[:2])
         # print(title)
 
         file = 'https://www.servicesaustralia.gov.au/freedom-information-disclosure-log' 
 
         record = {"Agency": "Services Australia",
                 "Date": use_date,
-                "Id":title.replace(" ", '').strip().lower(), 
-                "Title": title,
+                "Id":f"{stemmo}{use_date}", 
+                "Title": title.encode().decode("utf-8"),
                 "Url": urlo,
                 "Home_url": home,
                 "File": file}

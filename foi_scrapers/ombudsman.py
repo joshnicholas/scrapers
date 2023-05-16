@@ -132,7 +132,7 @@ for row in rows[1:10]:
         record = {"Agency": agency,
                 "Date": datto,
                 "Id": id,
-                "Title": title,
+                "Title": title.encode().decode("utf-8"),
                 # "Text": all_text, 
                 "Url": urlo,
                 "File": fillo}

@@ -122,7 +122,7 @@ soup = bs(driver.page_source, 'html.parser')
 
 box = soup.find(class_="content")
 
-print(urlo)
+# print(urlo)
 
 # %%
 
