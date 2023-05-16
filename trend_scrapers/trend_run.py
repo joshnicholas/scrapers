@@ -21,10 +21,9 @@ time.sleep(2)
 print("SBS")
 import sbs_top_stories
 
-time.sleep(2)
-print("SBS")
-import smh_top_scraper
-
+# time.sleep(2)
+# print("SBS")
+# import smh_top_scraper
 
 time.sleep(2)
 print("TM")

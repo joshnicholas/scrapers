@@ -24,7 +24,7 @@ load_dotenv()
 
 # %%
 
-agency = 'environment'
+agency = 'treasury'
 
 def send_foi_to_git(stemmo, repo, what, agent, frame):
 
