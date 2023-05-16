@@ -135,7 +135,7 @@ cards = box.find_all("tr", attrs={"tabindex": -1})
 
 listo = []
 
-for card in cards:
+for card in cards[:5]:
     try:
         # print(card)
 

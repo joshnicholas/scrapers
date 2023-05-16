@@ -68,6 +68,8 @@ cat.sort_values(by=['Date'], ascending=False, inplace=True)
 
 cat['Date'] = cat['Date'].dt.strftime('%Y-%m-%d')
 
+cat.fillna('', inplace=True)
+
 # print(cat)
 
 jsony = cat.to_dict(orient='records')

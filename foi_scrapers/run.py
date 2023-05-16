@@ -39,8 +39,6 @@ time.sleep(2)
 print("finance")
 import finance
 
-
-
 time.sleep(2)
 
 print("Feed generator")
