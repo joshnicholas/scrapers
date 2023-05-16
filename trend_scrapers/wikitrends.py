@@ -106,31 +106,35 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 
 wiki_r = requests.get(wiki_linko, headers=headers)
 
-# print(wiki_r.url)
+print(wiki_r.status_code)
 
-# print(wiki_r.text)
+if wiki_r.status_code != 404:
 
-wiki_trends = json.loads(wiki_r.text)
-wiki_trends = wiki_trends['items'][0]['articles']
-wiki_trends = wiki_trends[2:52]
-wiki_trends = [x['article'] for x in wiki_trends]
+    # print(wiki_r.url)
 
-df = pd.DataFrame(wiki_trends)
-df = df.rename(columns={0: "Page"})
-df['Page'] = df['Page'].str.replace("_", " ")
+    # print(wiki_r.text)
 
+    wiki_trends = json.loads(wiki_r.text)
+    wiki_trends = wiki_trends['items'][0]['articles']
+    wiki_trends = wiki_trends[2:52]
+    wiki_trends = [x['article'] for x in wiki_trends]
 
-
-# %%
-
-zdf = df.copy()
-zdf['Rank'] = zdf.index + 1
-
-zdf = zdf[['Rank', 'Page']]
+    df = pd.DataFrame(wiki_trends)
+    df = df.rename(columns={0: "Page"})
+    df['Page'] = df['Page'].str.replace("_", " ")
 
 
-# %%
+
+    # %%
+
+    zdf = df.copy()
+    zdf['Rank'] = zdf.index + 1
+
+    zdf = zdf[['Rank', 'Page']]
 
 
-send_to_git(scrape_date_stemmo, 'Archives', 'wiki', zdf)
+    # %%
+
+
+    send_to_git(scrape_date_stemmo, 'Archives', 'wiki', zdf)
 
