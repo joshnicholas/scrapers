@@ -20,13 +20,26 @@ import transport
 
 time.sleep(2)
 
-print("finance")
-import finance
+print("services")
+import services_aus
 
 time.sleep(2)
 
-print("services")
-import services_aus
+print("ombudsman")
+import ombudsman
+
+time.sleep(2)
+
+print("ag")
+import attorney_g
+
+
+time.sleep(2)
+
+print("finance")
+import finance
+
+
 
 time.sleep(2)
 

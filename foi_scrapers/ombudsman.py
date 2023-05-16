@@ -1,13 +1,14 @@
 # %%
 import pandas as pd 
+import dateparser
 
 import requests
 from bs4 import BeautifulSoup as bs
 
 import datetime 
 import pytz
-
 import sys
+import re
 
 import os 
 import pathlib
@@ -26,7 +27,7 @@ load_dotenv()
 
 # %%
 
-agency = 'finance'
+agency = 'ombudsman'
 
 def send_foi_to_git(stemmo, repo, what, agent, frame):
 
@@ -75,104 +76,82 @@ def send_foi_to_git(stemmo, repo, what, agent, frame):
 
 
 
-
-# %%
-
-today = datetime.datetime.now()
-scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
-scrape_hour = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%H')
-
 # %%
 
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
-# print("cwd:", os.getcwd())
 
-#%%
+# %%
 
 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
 'Accept-Language': "en-GB,en-US;q=0.9,en;q=0.8",
 "Referer": 'https://www.google.com',
 "DNT":'1'}
 
-
-#%%
-
-### Do initial scrape to get numbers
-
-urlo = 'https://www.finance.gov.au/about-us/freedom-information/disclosure-log'
+urlo = 'https://www.ombudsman.gov.au/about/audit-risk-and-foi/freedom-of-information/foi-disclosure-log'
 home = urlo
-
-r = requests.get(urlo, headers = headers)
-
-#soup = bs(r.text, 'html.parser')
-
-#%%
-
-# print(r.text)
-# print(r.status_code)
-# %%
+r = requests.get(urlo, headers=headers)
 
 soup = bs(r.text, 'html.parser')
 
-box = soup.find(class_='view-content')
-
-# print(box)
-
 # %%
 
-rows = soup.find_all('tr')
+body = soup.find('tbody')
 
+rows = body.find_all('tr')
 
-# print("donners: ", donners)
+listo = []
 
-listo= []
-for row in rows[1:5]:
+for row in rows[1:10]:
+    # print(row)
     try:
+        cells = row.find_all('td')
 
-        # print(row)
-        stemmo = row.find(attrs={"headers":"view-field-finance-foi-reference-table-column"}).text.strip()
-        # print(stemmo)
+        id = cells[0].text.strip()
+        # print(id)
 
+        datter = cells[1].text.strip()
 
+        parsed = dateparser.parse(datter)
+        datto = parsed.strftime("%Y-%m-%d")
+
+        texto = cells[2]
+
+        # title = texto.find('p').text.strip()
+        title = texto.text.strip()
+        title = re.sub(r"\s+", ' ', title)
+
+        # print(texto)
         
-        datto = row.find(class_='datetime').text.strip()
-        datto = datetime.datetime.strptime(datto, "%d %B %Y")
-        datto = datto.strftime("%Y-%m-%d")
-        # print(datto)
+        # all_text = texto.text.strip()
 
-        title = row.find(attrs={"headers":"view-title-table-column"}).text.strip()
-        # print(title)
+        file_url = cells[3].a['href']
+        fillo = file_url
 
-        urlo = row.find(attrs={"headers":"view-title-table-column"}).a['href']
-        # print(urlo)
-
-        file = 'https://www.finance.gov.au/' + urlo
-        # print(file)
-
-        record = {"Agency": "Finance",
+        record = {"Agency": agency,
                 "Date": datto,
-                "Id": stemmo,
+                "Id": id,
                 "Title": title,
-                "Home_url": home,
+                # "Text": all_text, 
                 "Url": urlo,
-                "File": file}
-
-
+                "File": fillo}
         listo.append(record)
 
 
-    except AttributeError as e:
+        # print(record)
+        # print(id)
+        # print(datto)
+        # print(cells[0])
+    except Exception as e:
 
         print(urlo)
         print(f"Exception is {e}")
         print(f"Line: {sys.exc_info()[-1].tb_lineno}")
         continue
-
+# %%
 
 cat = pd.DataFrame.from_records(listo)
-
 # print(cat)
 
 send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)

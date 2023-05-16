@@ -14,13 +14,17 @@ from github import Github
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # %%
 
 today = datetime.datetime.now()
 scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
 
-today_select = pd.datetime.today().date()
-selected_date = pd.date_range(today_select - pd.to_timedelta(14, unit='d'), today, freq='D')
+selected_date = pd.date_range(today.date() - pd.to_timedelta(14, unit='d'), today, freq='D')
+
+print(selected_date)
 
 # %%
 
@@ -50,6 +54,7 @@ for fillo in fillos:
         inter = pd.read_json(f'https://raw.githubusercontent.com/joshnicholas/Archives/main/Archive/foi/inter/{fillo}')
         listo.append(inter)
 
+# %%
 
 cat = pd.concat(listo)
 cat.drop_duplicates(subset=['Date', 'Agency', 'Id'])
@@ -61,6 +66,7 @@ cat.sort_values(by=['Date'], ascending=False, inplace=True)
 
 cat['Date'] = cat['Date'].dt.strftime('%Y-%m-%d')
 
+# print(cat)
 
 jsony = cat.to_dict(orient='records')
 content = json.dumps(jsony)
@@ -71,7 +77,7 @@ latters = repository.get_contents(inter)
 repository.update_file(inter, f"updated_scraped_file", content, latters.sha)
 
 
-
+# %%
 
 # %%
 

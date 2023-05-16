@@ -102,7 +102,7 @@ rows = soup.find_all('tr')
 
 listo = []
 
-for row in rows[1:]:
+for row in rows[1:10]:
 
     # print(row)
 
@@ -137,7 +137,7 @@ for row in rows[1:]:
         listo.append(record)
 
 
-        print(record)
+        # print(record)
 
     except Exception as e:
 
@@ -151,4 +151,4 @@ for row in rows[1:]:
 
 cat = pd.DataFrame.from_records(listo)
 
-send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)
+# send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)
