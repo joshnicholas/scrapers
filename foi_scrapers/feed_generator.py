@@ -59,7 +59,7 @@ for fillo in fillos:
 # %%
 
 cat = pd.concat(listo)
-cat.drop_duplicates(subset=['Date', 'Agency', 'Id'])
+cat.drop_duplicates(subset=['Agency', 'Id'], inplace=True)
 
 cat['Date'] = pd.to_datetime(cat['Date'], format=['%Y-%m-%d'])
 cat = cat.loc[cat['Date'].isin(selected_date)]
@@ -70,7 +70,7 @@ cat['Date'] = cat['Date'].dt.strftime('%Y-%m-%d')
 
 cat.fillna('', inplace=True)
 
-# print(cat)
+print(cat)
 
 jsony = cat.to_dict(orient='records')
 content = json.dumps(jsony)

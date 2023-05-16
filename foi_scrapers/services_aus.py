@@ -118,7 +118,7 @@ for row in rows[1:5]:
 
         file = 'https://www.servicesaustralia.gov.au/freedom-information-disclosure-log' 
 
-        record = {"Agency": "Services Australia",
+        record = {"Agency": agency,
                 "Date": use_date,
                 "Id":f"{stemmo}{use_date}", 
                 "Title": title.encode().decode("utf-8"),

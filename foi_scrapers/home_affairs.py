@@ -164,7 +164,7 @@ for card in cards[:5]:
         file = 'https://www.homeaffairs.gov.au' + file_path
         # print(file)
 
-        record = {"Agency": "Home Affairs",
+        record = {"Agency": agency,
                   "Date": datto,
                   "Id": stemmo,
                   "Title": title,

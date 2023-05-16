@@ -25,15 +25,15 @@ def create_repo_directories(pathos, stemmo):
 
     print(paths)
 
-    ### For new folders entirely
+    ## For new folders entirely
 
-    # if stemmo not in paths:
-    #     # repository.create_file(f'{pathos}/{new}/test.txt', "test", "hi")
-    #     repository.create_file(f'{pathos}/{new}/daily_dumps/hi.txt', "test", "hi")
-    #     repository.create_file(f'{pathos}/{new}/latest.json', "test", "[{'what':'hi'}]")
+    if stemmo not in paths:
+        # repository.create_file(f'{pathos}/{new}/test.txt', "test", "hi")
+        repository.create_file(f'{pathos}/{stemmo}/daily_dumps/hi.txt', "test", "hi")
+        repository.create_file(f'{pathos}/{stemmo}/latest.json', "test", "[{'what':'hi'}]")
 
-# create_repo_directories('Archive', 'tech_meme_top')
+create_repo_directories('Archive', 'aus_visa_wait')
 # %%
 
-thingo = 'attorney_general'
-repository.create_file(f'Archive/foi/inter/{thingo}.json', "test", "[{'what':'hi'}]")
+# thingo = 'attorney_general'
+# repository.create_file(f'Archive/foi/inter/{thingo}.json', "test", "[{'what':'hi'}]")

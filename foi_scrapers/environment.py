@@ -130,7 +130,7 @@ for row in rows[1:]:
         file = 'https://www.dcceew.gov.au/' + urlo
         # print(file)
 
-        record = {"Agency": "Environment",
+        record = {"Agency": agency,
                 "Date": datto,
                 "Id": stemmo,
                 "Title": title,

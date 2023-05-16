@@ -127,7 +127,7 @@ for row in rows[1:10]:
         fillo = 'https://www.infrastructure.gov.au/' + fillo_path
 
 
-        record = {"Agency": "Environment",
+        record = {"Agency": agency,
                 "Date": datto,
                 "Id": stemmo,
                 "Title": title.encode().decode("utf-8"),
