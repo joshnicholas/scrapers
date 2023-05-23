@@ -106,6 +106,7 @@ df = pd.DataFrame.from_records(items)
 df['Rank'] = df.index + 1
 
 df['scraped_datetime'] = format_scrape_time
+df['publication'] = 'Tech Meme'
 
 # print(df)
 # %%

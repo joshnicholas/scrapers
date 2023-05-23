@@ -131,6 +131,7 @@ try:
     df = pd.DataFrame(items)
 
     df['scraped_datetime']= format_scrape_time 
+    df['publication'] = 'SMH'
 
     # print(df)
 

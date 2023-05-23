@@ -101,6 +101,7 @@ items = [{"Headline":re.sub('\s+', ' ', x.h3.text.strip()), "Url": f"{x.a['href'
 df = pd.DataFrame(items)
 
 df['scraped_datetime'] = format_scrape_time
+df['publication'] = 'The Guardian'
 
 # %%
 

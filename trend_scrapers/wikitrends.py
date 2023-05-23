@@ -106,7 +106,8 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 
 wiki_r = requests.get(wiki_linko, headers=headers)
 
-print(wiki_r.status_code)
+# print(wiki_r.status_code)
+# print(wiki_r.url)
 
 if wiki_r.status_code != 404:
 
