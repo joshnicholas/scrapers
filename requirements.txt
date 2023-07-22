@@ -54,3 +54,5 @@ selenium
 dateparser
 pygithub
 python-dotenv
+feedparser
+
