@@ -32,7 +32,9 @@ def create_repo_directories(pathos, stemmo):
         repository.create_file(f'{pathos}/{stemmo}/daily_dumps/hi.txt', "test", "hi")
         repository.create_file(f'{pathos}/{stemmo}/latest.json', "test", "[{'what':'hi'}]")
 
-create_repo_directories('Archive', 'aus_visa_wait')
+# create_repo_directories('Archive', 'aus_visa_wait')
+# create_repo_directories('Archive', 'journalism')
+create_repo_directories('Archive', 'link-log')
 # %%
 
 # thingo = 'attorney_general'
