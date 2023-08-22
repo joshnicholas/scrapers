@@ -3,7 +3,6 @@
 
 import requests
 import os 
-import shutil
 import pandas as pd 
 
 import pathlib
