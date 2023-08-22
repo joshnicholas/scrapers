@@ -55,5 +55,4 @@ dateparser
 pygithub
 python-dotenv
 feedparser
-scikit-learn
 sentence_transformers
