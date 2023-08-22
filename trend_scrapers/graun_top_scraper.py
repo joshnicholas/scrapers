@@ -89,14 +89,42 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 # %%
 
 r = requests.get("https://www.theguardian.com/au")
+
+
+# %%
+
 soup = bs(r.text, 'html.parser')
-items = soup.find_all("li", class_="most-popular__item")
+box = soup.find(id='container-most-viewed')
+# print(box)
+lister = box.find_all("li")
 
 
-items = [{"Headline":re.sub('\s+', ' ', x.h3.text.strip()), "Url": f"{x.a['href']}"} for x in items]
+# # # print(r.text)
+# items = [{"Headline":re.sub('\s+', ' ', x.h4.text.strip()), "Url": f"{x.a['href']}"} for x in items]
+# # print(items)
+
+print(lister)
+
+items = []
+
+for thing in lister:
+    record = {"Headline": re.sub('\s+', ' ', thing.h4.text.strip())}
+
+    aye = thing.a['href']
+    if "https://www.theguardian.com" in aye:
+        record['Url'] = aye
+    
+    else:
+        record['Url'] = "https://www.theguardian.com" + aye
+
+        
+    items.append(record)
+
+print(items)
+
+# %%
 
 
-# print(items)
 
 df = pd.DataFrame(items)
 
@@ -108,7 +136,7 @@ df['publication'] = 'The Guardian'
 zdf = df.copy()
 zdf['Rank'] = zdf.index + 1
 
-# print(zdf)
+print(zdf)
 
 
 # dumper('../archive/graun_top', 'latest', zdf)
@@ -121,3 +149,5 @@ zdf['Rank'] = zdf.index + 1
 
 send_to_git(format_scrape_time, 'Archives', 'graun_top', zdf)
 
+
+# %%
