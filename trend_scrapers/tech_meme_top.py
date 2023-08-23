@@ -29,6 +29,51 @@ load_dotenv()
 
 # %%
 
+def send_to_s3(scrape_time, what, frame):
+    import boto3
+    yesterday = scrape_time - datetime.timedelta(days=1)
+    twelve_ago = scrape_time - datetime.timedelta(hours=12)
+    format_scrape_day = datetime.datetime.strftime(scrape_time, "%Y_%m_%d")
+    format_scrape_yesterday = datetime.datetime.strftime(yesterday, "%Y_%m_%d")
+    format_scrape_month = datetime.datetime.strftime(scrape_time, "%Y_%m")
+    format_scrape_12_ago = datetime.datetime.strftime(twelve_ago, "%Y_%m_%d_%H")
+    format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
+
+    AWS_KEY = os.environ['awsykey']
+    AWS_SECRET = os.environ['awsysec']
+
+    session = boto3.Session(
+            aws_access_key_id=AWS_KEY,
+            aws_secret_access_key=AWS_SECRET,
+            )
+
+    s3 = session.resource('s3')
+    s3_client = session.client('s3')
+    my_bucket = s3.Bucket('chaluchasu')
+
+    copier = frame.copy()
+    copier.fillna('', inplace=True)
+
+    jsony = copier.to_dict(orient='records')
+    content = json.dumps(jsony)
+
+    latest_path = f"{what}/latest.json"
+    archive_path = f"{what}/dumps/{format_scrape_month}/{format_scrape_time}.json"
+
+    print(archive_path)
+
+    s3_client.put_object(
+     Body=content,
+     Bucket='chaluchasu',
+     Key=latest_path
+    )
+
+    s3_client.put_object(
+     Body=content,
+     Bucket='chaluchasu',
+     Key=archive_path
+    )
+
 def send_to_git(stemmo, repo, what, frame):
 
     tokeny = os.environ['gitty']
@@ -112,3 +157,6 @@ df['publication'] = 'Tech Meme'
 # %%
 
 send_to_git(format_scrape_time, 'Archives', 'tech_meme_top', df)
+
+
+send_to_s3(scrape_time, 'tech_meme_top', df)
