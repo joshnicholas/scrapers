@@ -6,9 +6,9 @@ os.chdir(pathos)
 import time
 
 do = []
-do.extend(list(pathlib.Path('other_scrapers').rglob("*.py")))
+do.extend(list(pathlib.Path('foi_scrapers').rglob("*.py")))
 
-exclude = ['other_scrapers/new_cse_scraper.py']
+exclude = []
 
 for scraper in do:
     if str(scraper) not in exclude:
