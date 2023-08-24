@@ -55,9 +55,9 @@ def send_to_git(stemmo, repo, what, frame):
 
         fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
 
-        print(pathos)
-        print("contents: ", contents)
-        print("fillos: ", fillos)
+        # print(pathos)
+        # print("contents: ", contents)
+        # print("fillos: ", fillos)
         return fillos
 
 
@@ -100,7 +100,7 @@ filtered = []
 
 for page in range(1, num_pages+1):
 # for page in range(1, 2):
-    print("Starting page: ", page)
+    # print("Starting page: ", page)
     new_r = session.get(urlo, params={'page': page})
     new_jsony = json.loads(new_r.text)
     rand_delay(2)

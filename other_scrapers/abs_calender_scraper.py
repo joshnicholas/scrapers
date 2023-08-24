@@ -45,9 +45,9 @@ def send_to_git(stemmo, repo, what, frame):
 
         fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
 
-        print(pathos)
-        print("contents: ", contents)
-        print("fillos: ", fillos)
+        # print(pathos)
+        # print("contents: ", contents)
+        # print("fillos: ", fillos)
         return fillos
 
 
@@ -179,7 +179,7 @@ def send_to_s3(scrape_time, what, frame):
     latest_path = f"{what}/latest.json"
     archive_path = f"{what}/dumps/{format_scrape_month}/{format_scrape_time}.json"
 
-    print(archive_path)
+    # print(archive_path)
 
     s3_client.put_object(
      Body=content,

@@ -42,9 +42,9 @@ def send_to_git(stemmo, repo, what, frame):
 
         fillos = [x.path.replace(f"{pathos}/", '') for x in contents]
 
-        print(pathos)
-        print("contents: ", contents)
-        print("fillos: ", fillos)
+        # print(pathos)
+        # print("contents: ", contents)
+        # print("fillos: ", fillos)
         return fillos
 
 
@@ -109,7 +109,7 @@ jsony = json.loads(response.text)
 
 records = jsony['d']['data']
 
-print(records)
+# print(records)
 # %%
 
 

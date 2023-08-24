@@ -105,7 +105,7 @@ lister = box.find_all("li")
 # items = [{"Headline":re.sub('\s+', ' ', x.h4.text.strip()), "Url": f"{x.a['href']}"} for x in items]
 # # print(items)
 
-print(lister)
+# print(lister)
 
 items = []
 
@@ -122,7 +122,7 @@ for thing in lister:
         
     items.append(record)
 
-print(items)
+# print(items)
 
 # %%
 
@@ -180,7 +180,7 @@ def send_to_s3(scrape_time, what, frame):
     latest_path = f"{what}/latest.json"
     archive_path = f"{what}/dumps/{format_scrape_month}/{format_scrape_time}.json"
 
-    print(archive_path)
+    # print(archive_path)
 
     s3_client.put_object(
      Body=content,
