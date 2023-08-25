@@ -22,6 +22,8 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 "Referer": 'https://www.google.com',
 "DNT":'1'}
 
+
+
 # %%
 import pytz
 import datetime

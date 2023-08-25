@@ -1,5 +1,6 @@
 async-generator==1.10
 transformers
+scikit-learn
 datasets
 attrs==22.2.0
 beautifulsoup4==4.11.2
