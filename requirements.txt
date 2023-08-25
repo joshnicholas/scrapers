@@ -1,6 +1,6 @@
 async-generator==1.10
-faiss-cpu
-torch
+transformers
+datasets
 attrs==22.2.0
 beautifulsoup4==4.11.2
 blinker==1.6.2
