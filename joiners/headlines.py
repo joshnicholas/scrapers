@@ -2,7 +2,7 @@
 # import requests
 import pandas as pd 
 from sentence_transformers import SentenceTransformer, util
-
+import time 
 import pathlib
 import os 
 import json
@@ -107,56 +107,72 @@ def get_latest_s3(checkers, scrape_time, extra = False):
     s3_client = session.client('s3')
     my_bucket = s3.Bucket('chaluchasu')
 
-    what = checkers[0]
+    listo = []
+    for what in checkers:
 
-    there = []
-    for datto in [format_scrape_month, format_scrape_last_month]:
-        if extra:
-            new_path = f"{what}/{extra}/{datto}/"
-        else:
-            new_path = f"{what}/dumps/{datto}/"
+        there = []
+        for datto in [format_scrape_month, format_scrape_last_month]:
+            if extra:
+                new_path = f"{what}/{extra}/{datto}/"
+            else:
+                new_path = f"{what}/dumps/{datto}/"
 
-        print(new_path)
-        response = s3_client.list_objects_v2(Bucket='chaluchasu', Prefix=new_path)
-        print(response)
-        inter = [x['Key'] for x in response['Contents']]
-        inter = [x for x in inter if any(s in x for s in [format_scrape_day, format_scrape_yesterday])]
-        print(inter)
-        there.extend(inter)
+            # print(new_path)
+            response = s3_client.list_objects_v2(Bucket='chaluchasu', Prefix=new_path)
+            # print(response)
+            inter = [x['Key'] for x in response['Contents']]
+            # print(inter)
+            inter = [x for x in inter if any(s in x for s in [format_scrape_day, format_scrape_yesterday])]
+
+            there.extend(inter)
+        
+        for thing in there:
+            response = s3_client.get_object(Bucket='chaluchasu', Key=thing)
+            inter = pd.read_json(response.get("Body"))
+            # print(inter)
+            listo.append(inter)
+        time.sleep(2)
+
+    cat = pd.concat(listo)
+    return cat
 
 
-    print(there)
 
-get_latest_s3(['abc_top'], scrape_time)
-
+testo = get_latest_s3(to_check, scrape_time)
 
 
+
+
+# %%
+
+print(testo)
+
+print(testo.columns.tolist())
 
 # %%
 
 
-# %%
+# urls = ["https://raw.githubusercontent.com/joshnicholas/Archives/main/Archive/abc_top/latest.json",
+# "https://raw.githubusercontent.com/joshnicholas/Archives/main/Archive/graun_top/latest.json",
+# "https://raw.githubusercontent.com/joshnicholas/Archives/main/Archive/sbs_top/latest.json"]
 
 
-urls = ["https://raw.githubusercontent.com/joshnicholas/Archives/main/Archive/abc_top/latest.json",
-"https://raw.githubusercontent.com/joshnicholas/Archives/main/Archive/graun_top/latest.json",
-"https://raw.githubusercontent.com/joshnicholas/Archives/main/Archive/sbs_top/latest.json"]
+# listo = []
 
+# for urlo in urls:
+#     inter = pd.read_json(urlo)
+#     listo.append(inter)
+#     # print(inter)
+#     # print(inter.columns.tolist())
+#     # 'publication', 'scraped_datetime', 'Headline', 'Url', 'Rank'
 
-listo = []
+# # %%
 
-for urlo in urls:
-    inter = pd.read_json(urlo)
-    listo.append(inter)
-    # print(inter)
-    # print(inter.columns.tolist())
-    # 'publication', 'scraped_datetime', 'Headline', 'Url', 'Rank'
+# cat = pd.concat(listo)
+# cat = cat[['publication', 'scraped_datetime', 'Headline', 'Url', 'Rank']]
+# print(cat)
 
-# %%
-
-cat = pd.concat(listo)
-cat = cat[['publication', 'scraped_datetime', 'Headline', 'Url', 'Rank']]
-print(cat)
+cat = testo.copy()
 
 # https://www.sbert.net/examples/applications/semantic-search/README.html
 
@@ -208,7 +224,7 @@ zog['scraped_datetime'] = pd.to_datetime(zog['scraped_datetime'], format="%Y%m%d
 
 zog['scraped_datetime'] = zog['scraped_datetime'].dt.strftime("%M%p %d/%m%/%y")
 
-# print(zog)
+print(zog)
 # %%
 
 
