@@ -143,6 +143,11 @@ utc_hour = utc_then.strftime('%H')
 # %%
 
 wiki_linko = f"https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia.org/all-access/{utc_year}/{utc_month}/{utc_day}"
+https://pageviews.wmcloud.org/topviews/?project=en.wikipedia.org&platform=all-access&date=last-month&excludes=#
+https://pageviews.wmcloud.org/topviews/?project=en.wikipedia.org&platform=all-access&date=last-month&excludes=#
+https://pageviews.wmcloud.org/topviews/?project=en.wikipedia.org&platform=all-access&date=yesterday&excludes=#
+
+https://pageviews.wmcloud.org/topviews/?project=en.wikipedia.org&platform=all-access&date=2015-07-01&excludes=#
 
 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36",
 'Accept-Language': "en-GB,en-US;q=0.9,en;q=0.8",

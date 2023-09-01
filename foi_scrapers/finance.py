@@ -124,8 +124,7 @@ box = soup.find(class_='view-content')
 
 rows = soup.find_all('tr')
 
-
-# print("donners: ", donners)
+# %%
 
 listo= []
 for row in rows[1:5]:
@@ -221,7 +220,9 @@ def send_foi_to_s3(scrape_time, what, agent, frame):
     )
 
     
+# print(cat)
 
 send_foi_to_s3(scrape_time, 'foi', agency, cat)
 
 send_foi_to_git(f"{format_scrape_time}_{agency}", 'Archives', 'foi', agency, cat)
+# %%

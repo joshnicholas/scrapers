@@ -205,6 +205,7 @@ def send_foi_to_s3(scrape_time, what, agent, frame):
 
     
 
+# print(cat)
 send_foi_to_s3(scrape_time, 'foi', agency, cat)
 
 
