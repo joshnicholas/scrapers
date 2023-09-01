@@ -163,7 +163,7 @@ wiki_r = requests.get(wiki_linko, headers=headers)
 # print(wiki_r.url)
 # %%
 
-print(wiki_r.text)
+# print(wiki_r.text)
 
 # %%
 

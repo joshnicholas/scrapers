@@ -26,7 +26,7 @@ load_dotenv()
 
 # %%
 
-agency = 'environment'
+agency = 'transport'
 
 def send_foi_to_git(stemmo, repo, what, agent, frame):
 
@@ -94,11 +94,13 @@ r = requests.get(urlo, headers=headers)
 
 soup = bs(r.text, 'html.parser')
 
-
+# print(soup)
 # %%
 
 rows = soup.find_all('tr')
 
+# print(rows)
+# %%
 
 listo = []
 
@@ -121,11 +123,13 @@ for row in rows[1:10]:
         # print(datto)
 
         title = cells[2].text.strip()
-        # print(title)
+        # print(title) 
 
-        fillo_path = cells[1].a['href']
-        fillo = 'https://www.infrastructure.gov.au/' + fillo_path
-
+        if cells[1].a:
+            fillo_path = cells[1].a['href']
+            fillo = 'https://www.infrastructure.gov.au/' + fillo_path
+        else: 
+            fillo = ''
 
         record = {"Agency": agency,
                 "Date": datto,

@@ -1,0 +1,4 @@
+
+
+
+15 * * * * /usr/bin/python3 /home/ubuntu/scrapers/runners/hourly.py
