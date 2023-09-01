@@ -19,12 +19,20 @@ load_dotenv()
 # %%
 
 from selenium import webdriver 
-from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.options import Options
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-# chrome_options.add_argument('--no-sandbox') 
-driver = webdriver.Chrome(options=chrome_options)
+# chrome_options = Options()
+# chrome_options.add_argument("--headless")
+# # chrome_options.add_argument('--no-sandbox') 
+# driver = webdriver.Chrome(options=chrome_options)
+
+from selenium.webdriver.chrome.service import Service
+service = Service()
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")
+
+driver = webdriver.Chrome(service=service, options=options)
+
 
 import time
 from github import Github, UnknownObjectException

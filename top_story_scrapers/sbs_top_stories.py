@@ -13,8 +13,8 @@ import os
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
-from selenium import webdriver 
-from selenium.webdriver.chrome.options import Options
+# from selenium import webdriver 
+# from selenium.webdriver.chrome.options import Options
 
 # chrome_options = Options()
 # chrome_options.add_argument("--headless")

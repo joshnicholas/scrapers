@@ -11,11 +11,18 @@ from dateutil.relativedelta import relativedelta
 import pytz
 
 from selenium import webdriver 
-from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.options import Options
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(options=chrome_options)
+# chrome_options = Options()
+# chrome_options.add_argument("--headless")
+# driver = webdriver.Chrome(options=chrome_options)
+
+from selenium.webdriver.chrome.service import Service
+service = Service()
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")
+
+driver = webdriver.Chrome(service=service, options=options)
 
 import json 
 import time
@@ -179,7 +186,7 @@ def send_to_s3(scrape_time, what, frame):
     latest_path = f"{what}/latest.json"
     archive_path = f"{what}/dumps/{format_scrape_month}/{format_scrape_time}.json"
 
-    # print(archive_path)
+    print(archive_path)
 
     s3_client.put_object(
      Body=content,

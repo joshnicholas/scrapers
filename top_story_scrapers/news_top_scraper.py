@@ -14,11 +14,17 @@ os.chdir(pathos)
 # %%
 
 from selenium import webdriver 
-from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.options import Options
+# chrome_options = Options()
+# chrome_options.add_argument("--headless")
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
 
+from selenium.webdriver.chrome.service import Service
+service = Service()
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")
+
+driver = webdriver.Chrome(service=service, options=options)
 
 # %%
 
@@ -44,8 +50,6 @@ headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
 
 # %%
 
-
-driver = webdriver.Chrome(options=chrome_options)
 start_url = "https://www.news.com.au/"
 driver.get(start_url)
 
