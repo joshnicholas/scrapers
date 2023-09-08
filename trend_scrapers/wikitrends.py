@@ -193,6 +193,7 @@ if wiki_r.status_code != 404:
 
     zdf = df.copy()
     zdf = zdf[['Rank', 'Page', 'Views']]
+    zdf['scraped_datetime'] = format_scrape_time
 
     # %%
 

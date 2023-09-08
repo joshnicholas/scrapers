@@ -3,6 +3,6 @@
 
 15 * * * * /usr/bin/python3 /home/ubuntu/scrapers/runners/hourly.py
 22 8,20 * * * /usr/bin/python3 /home/ubuntu/scrapers/other_scrapers/oz_weather.py
-33 9-18/2 * * 1-5 /usr/bin/python3 /home/ubuntu/scrapers/runners/foi.py
-17 13-19 * * 1-5 /usr/bin/python3 /home/ubuntu/scrapers/other_scrapers/new_cse_scraper.py
-44 6 * * 4 /usr/bin/python3 /home/ubuntu/scrapers/runners/weekly_run.py
+35 7 * * 1-5 /usr/bin/python3 /home/ubuntu/scrapers/runners/foi.py
+19 13-19 * * 1-5 /usr/bin/python3 /home/ubuntu/scrapers/other_scrapers/new_cse_scraper.py
+46 6 * * 4 /usr/bin/python3 /home/ubuntu/scrapers/runners/weekly_run.py
