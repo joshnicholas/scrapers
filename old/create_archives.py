@@ -35,7 +35,8 @@ def create_repo_directories(pathos, stemmo):
 # create_repo_directories('Archive', 'aus_visa_wait')
 # create_repo_directories('Archive', 'journalism')
 # create_repo_directories('Archive', 'link-log')
-create_repo_directories('Archive', 'headlines')
+# create_repo_directories('Archive', 'headlines')
+create_repo_directories('Archive', 'google_top')
 # %%
 
 # thingo = 'attorney_general'

@@ -179,24 +179,20 @@ if wiki_r.status_code != 404:
 
     wiki_trends = json.loads(wiki_r.text)
     wiki_trends = wiki_trends['items'][0]['articles']
-    wiki_trends = wiki_trends[2:52]
-    wiki_trends = [x['article'] for x in wiki_trends]
+    # wiki_trends = wiki_trends[2:52]
+
+    # wiki_trends = [x['article'] for x in wiki_trends]
+
+
 
     df = pd.DataFrame(wiki_trends)
-    df = df.rename(columns={0: "Page"})
-    df['Page'] = df['Page'].str.replace("_", " ")
-
-
-
-
+    df = df.rename(columns={"article": "Page", "views": "Views", 'rank': "Rank"})
+    # df['Page'] = df['Page'].str.replace("_", " ")
 
     # %%
 
     zdf = df.copy()
-    zdf['Rank'] = zdf.index + 1
-
-    zdf = zdf[['Rank', 'Page']]
-
+    zdf = zdf[['Rank', 'Page', 'Views']]
 
     # %%
 

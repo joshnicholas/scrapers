@@ -140,6 +140,7 @@ zdf['Rank'] = zdf.index + 1
 
 # print(zdf)
 
+# print("Cols: ", zdf.columns.tolist())
 
 # dumper('../archive/graun_top', 'latest', zdf)
 
