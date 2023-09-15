@@ -142,8 +142,8 @@ zdf['Rank'] = zdf.index + 1
 def create_search(what, frame):
     import nltk
     from nltk.stem import WordNetLemmatizer
-    nltk.download("wordnet")
-    nltk.download("omw-1.4")
+    # nltk.download("wordnet")
+    # nltk.download("omw-1.4")
     import re 
 
     def do_it(texto):

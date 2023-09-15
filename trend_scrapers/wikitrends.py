@@ -201,8 +201,8 @@ if wiki_r.status_code != 404:
     def create_search(what, frame):
         import nltk
         from nltk.stem import WordNetLemmatizer
-        nltk.download("wordnet")
-        nltk.download("omw-1.4")
+        # nltk.download("wordnet")
+        # nltk.download("omw-1.4")
         import re 
 
         def do_it(texto):
@@ -211,7 +211,7 @@ if wiki_r.status_code != 404:
 
             senno = ''
 
-            inside_texto = re.sub(r'[^A-Za-z0-9 ]+', '', texto)
+            inside_texto = re.sub(r'[^A-Za-z0-9]+', ' ', texto)
             for word in inside_texto.split(" "):
                 senno += f"{word.lower()} "
 
@@ -231,7 +231,7 @@ if wiki_r.status_code != 404:
 
     zdf = create_search("Page", zdf)
 
-    
+    print(zdf['Search_var'].unique().tolist())
 
     send_to_s3(scrape_time, 'wiki', zdf)
 
