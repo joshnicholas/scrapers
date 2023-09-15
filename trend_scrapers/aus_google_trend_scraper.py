@@ -131,7 +131,7 @@ def create_search(what, frame):
 
 zdf = create_search("Search", zdf)
 
-print(zdf)
+# print(zdf)
 
 def send_to_s3(scrape_time, what, frame):
     import boto3
