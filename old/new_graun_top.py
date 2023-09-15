@@ -1,22 +1,33 @@
 # %%
-import pandas as pd
-from pytrends.request import TrendReq
-import datetime
+# import requests
+import pandas as pd 
+from bs4 import BeautifulSoup as bs 
 import pytz
-
+import datetime
 import json
+import requests
+import re
+import requests
+
 import pathlib
 import os 
 pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
+# %%
 import time
 from github import Github, UnknownObjectException
 
+import boto3
 from dotenv import load_dotenv
 load_dotenv()
 
 # %%
+
+
+
+
+
 
 def send_to_git(stemmo, repo, what, frame):
 
@@ -59,82 +70,11 @@ def send_to_git(stemmo, repo, what, frame):
     if donners == False:
 
         repository.create_file(filename, f"new_scraped_file_{stemmo}", content)
-        
 
-def dumper(path, name, frame):
-    with open(f'{path}/{name}.csv', 'w') as f:
-        frame.to_csv(f, index=False, header=True)
+    
 
-
-today = datetime.datetime.now()
-
-scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
-
-scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
-format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
-
-# %%
-
-pytrend = TrendReq(hl='en-US', tz=360)
-
-df = pytrend.trending_searches(pn='australia')
-df.rename(columns={0: "Search"}, inplace=True)
-
-df['scraped_datetime'] = format_scrape_time
-
-# %%
-
-zdf = df.copy()
-zdf['Rank'] = zdf.index + 1
-
-zdf = zdf[['Rank', 'Search', 'scraped_datetime']]
-
-# print(zdf)
-
-# dumper('../archive/google', 'latest', zdf)
-
-# dumper('../archive/google/daily_dumps', scrape_date_stemmo, zdf)
-
-# with open(f'../static/latest_google.json', 'w') as f:
-#     zdf.to_json(f, orient='records')
-
-def create_search(what, frame):
-    import nltk
-    from nltk.stem import WordNetLemmatizer
-    nltk.download("wordnet")
-    nltk.download("omw-1.4")
-    import re 
-
-    def do_it(texto):
-
-        wnl = WordNetLemmatizer() 
-
-        senno = ''
-
-        inside_texto = re.sub(r'[^A-Za-z0-9 ]+', '', texto)
-        for word in inside_texto.split(" "):
-            senno += f"{word.lower()} "
-
-            stemmed = wnl.lemmatize(word)
-
-            if stemmed.lower() not in senno:
-                senno += f"{stemmed} "
-
-        return senno
-
-    copier = frame.copy()
-    copier.fillna('', inplace=True)
-    copier['Search_var'] = copier[what].map(lambda x: do_it(x))
-
-    return copier
-
-
-zdf = create_search("Search", zdf)
-
-print(zdf)
 
 def send_to_s3(scrape_time, what, frame):
-    import boto3
     yesterday = scrape_time - datetime.timedelta(days=1)
     twelve_ago = scrape_time - datetime.timedelta(hours=12)
     format_scrape_day = datetime.datetime.strftime(scrape_time, "%Y_%m_%d")
@@ -178,11 +118,69 @@ def send_to_s3(scrape_time, what, frame):
      Key=archive_path
     )
 
-    
 
-send_to_s3(scrape_time, 'google', zdf)
+# %%
 
-send_to_git(format_scrape_time, 'Archives', 'google', zdf)
+today = datetime.datetime.now()
+
+scrape_date_stemmo = today.astimezone(pytz.timezone("Australia/Brisbane")).strftime('%Y%m%d')
+
+scrape_time = today.astimezone(pytz.timezone("Australia/Brisbane"))
+format_scrape_time = datetime.datetime.strftime(scrape_time, "%Y_%m_%d_%H")
 
 
+# %%
+
+
+
+headers = {
+    'sec-ch-ua': '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
+    'Referer': 'https://www.theguardian.com/media/2023/sep/15/chris-kenny-cops-it-from-his-readers-for-sticking-by-the-voice',
+    'sec-ch-ua-mobile': '?0',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+    'sec-ch-ua-platform': '"macOS"',
+}
+
+params = {
+    'dcr': 'true',
+}
+
+response = requests.get('https://api.nextgen.guardianapps.co.uk/most-read-geo.json', params=params, headers=headers)
+
+
+# %%
+
+items = []
+
+jsony = json.loads(response.text)
+# 'country', 'heading', 'trails'
+
+# dict_keys(['url', 'linkText', 'showByline', 'byline', 
+#            'masterImage', 'image', 'carouselImages', 
+#            'isLiveBlog', 'pillar', 'designType', 'format', 
+#            'webPublicationDate', 'headline', 'shortUrl', 
+#            'discussion'])
+
+rank = 1
+for thingo in jsony['trails']:
+    record = {'Headline': thingo['linkText'],
+              "Url": thingo['linkText'],
+              "publication": "The Guardian",
+              "Rank": rank,
+              "scraped_datetime": format_scrape_time,
+              "Publish datetime":thingo['webPublicationDate'],
+              'isLiveBlog':thingo['isLiveBlog']}
+
+    rank += 1
+    items.append(record)
+
+    # print(record)
+
+df = pd.DataFrame(items)
+
+print(df)
+
+# ['Headline', 'Url', 'scraped_datetime', 'publication', 'Rank']
+# 
+# print(jsony['trails'][0]['isLiveBlog'])
 # %%

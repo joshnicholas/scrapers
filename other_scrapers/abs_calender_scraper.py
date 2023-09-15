@@ -209,3 +209,5 @@ send_to_git(format_scrape_time, 'Archives', 'abs', cat)
 # # %%
 
 # %%
+
+driver.quit()

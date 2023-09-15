@@ -138,7 +138,43 @@ df['publication'] = 'The Guardian'
 zdf = df.copy()
 zdf['Rank'] = zdf.index + 1
 
+
+def create_search(what, frame):
+    import nltk
+    from nltk.stem import WordNetLemmatizer
+    nltk.download("wordnet")
+    nltk.download("omw-1.4")
+    import re 
+
+    def do_it(texto):
+
+        wnl = WordNetLemmatizer() 
+
+        senno = ''
+
+        inside_texto = re.sub(r'[^A-Za-z0-9 ]+', '', texto)
+        for word in inside_texto.split(" "):
+            senno += f"{word.lower()} "
+
+            stemmed = wnl.lemmatize(word)
+
+            if stemmed.lower() not in senno:
+                senno += f"{stemmed} "
+
+        return senno
+
+    copier = frame.copy()
+    copier.fillna('', inplace=True)
+    copier['Search_var'] = copier[what].map(lambda x: do_it(x))
+
+    return copier
+
+
+zdf = create_search("Headline", zdf)
+
+
 # print(zdf)
+# print(zdf.columns.tolist())
 
 # print("Cols: ", zdf.columns.tolist())
 
