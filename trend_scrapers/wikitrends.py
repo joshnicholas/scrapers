@@ -231,7 +231,7 @@ if wiki_r.status_code != 404:
 
     zdf = create_search("Page", zdf)
 
-    print(zdf['Search_var'].unique().tolist())
+    # print(zdf['Search_var'].unique().tolist())
 
     send_to_s3(scrape_time, 'wiki', zdf)
 
