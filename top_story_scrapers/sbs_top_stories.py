@@ -14,12 +14,12 @@ pathos = pathlib.Path(__file__).parent
 os.chdir(pathos)
 
 # from selenium import webdriver 
-# from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.service import Service
+# service = Service()
+# options = webdriver.ChromeOptions()
+# options.add_argument("--headless")
 
-# chrome_options = Options()
-# chrome_options.add_argument("--headless")
-# # chrome_options.add_argument('--no-sandbox') 
-# driver = webdriver.Chrome(options=chrome_options)
+# driver = webdriver.Chrome(service=service, options=options)
 
 import time
 from github import Github, UnknownObjectException
@@ -100,7 +100,7 @@ r = requests.get("https://www.sbs.com.au/news/collection/top-stories", headers=h
 # start_url = "https://www.sbs.com.au/news/collection/top-stories"
 # driver.get(start_url)
 
-
+# print(driver.page_source)
 
 # %%
 
@@ -108,11 +108,16 @@ r = requests.get("https://www.sbs.com.au/news/collection/top-stories", headers=h
 soup = bs(r.text, 'html.parser')
 div = soup.find("div", {"data-layer-event-source-title":"Top Stories"})
 
+# print(div)
 
+# %%
+
+# %%
 items = div.find_all("a", {"data-testid":"internal-link"})
-items = [x for x in items if x.find('h2')]
+items = [x for x in items if x.find('h3')]
 
 # print(items[:2])
+
 counter = 1
 
 sent = 0
@@ -123,7 +128,7 @@ for thing in items:
 
     try:
 
-        heado = thing.h2.text
+        heado = thing.h3.text
 
         # print(heado)
 
