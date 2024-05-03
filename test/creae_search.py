@@ -69,5 +69,5 @@ def create_search(what, frame):
 
 zdf = create_search("Headline", zdf)
 
-
+print(zdf)
 # %%

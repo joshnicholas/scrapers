@@ -184,4 +184,4 @@ def send_to_git(stemmo, repo, what, frame):
 
 send_to_s3(scrape_time, 'google_top', df)
 
-send_to_git(scrape_date_stemmo, 'Archives', 'google_top', df)
+send_to_git(format_scrape_time, 'Archives', 'google_top', df)

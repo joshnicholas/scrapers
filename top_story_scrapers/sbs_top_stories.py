@@ -237,7 +237,8 @@ def send_to_s3(scrape_time, what, frame):
      Key=archive_path
     )
 
-    
+
+print(df.columns.tolist())
 
 send_to_s3(scrape_time, 'sbs_top', df)
 
